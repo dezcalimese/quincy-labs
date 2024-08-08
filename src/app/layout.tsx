@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Quicksand } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Header from "./_components/Header";
 
@@ -19,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
