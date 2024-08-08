@@ -1,4 +1,7 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -15,6 +18,16 @@ export default function Home() {
         />
         <p className="pt-4 text-lg">Financial Reishi Research Institute</p>
       </div>
+      <Button variant="outline" className="px-6 py-[1.2rem] text-2xl mt-4">
+        <Link
+          href="https://calendly.com/yuma-omoprotocol/30min"
+          target="_blank"
+          className="flex items-center"
+        >
+          Schedule a call{" "}
+          <FaArrowUpRightFromSquare className="ml-4 mb-0.5 w-5 h-5" />
+        </Link>
+      </Button>
     </main>
   );
 }
