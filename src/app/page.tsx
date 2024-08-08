@@ -18,7 +18,7 @@ export default function Home() {
         />
         <p className="pt-4 text-lg">Financial Reishi Research Institute</p>
       </div>
-      <Button variant="outline" className="px-6 py-[1.2rem] text-2xl mt-4">
+      <Button variant="outline" className="px-6 py-[1.2rem] text-xl mt-4">
         <Link
           href="https://calendly.com/yuma-omoprotocol/30min"
           target="_blank"

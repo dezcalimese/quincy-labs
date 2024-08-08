@@ -10,13 +10,13 @@ const Header: React.FC = () => {
       <div className="text-5xl font-bold whitespace-nowrap">Quincy Labs</div>
       <div className="flex space-x-4">
         {" "}
-        <Button variant="outline" className="px-6 py-[1.2rem] text-2xl">
+        <Button variant="outline" className="px-6 py-[1.2rem] text-xl">
           <Link
             href="https://x.com/Quincy_Labs"
             target="_blank"
             className="flex items-center"
           >
-            Follow on <FaXTwitter className="ml-2 mt-0.5 w-5 h-5" />
+            Follow on <FaXTwitter className="ml-2 -mt-0.25 w-4 h-4" />
           </Link>
         </Button>
         <ModeToggle />
