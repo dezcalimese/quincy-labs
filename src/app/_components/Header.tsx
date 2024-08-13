@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       <div className="text-5xl font-bold whitespace-nowrap">Quincy Labs</div>
       <div className="flex space-x-4">
         {" "}
-        <Button variant="outline" className="px-6 py-[1.2rem] text-xl">
+        <Button variant="outline" className="px-6 py-[1.2rem] text-lg">
           <Link
             href="https://x.com/Quincy_Labs"
             target="_blank"

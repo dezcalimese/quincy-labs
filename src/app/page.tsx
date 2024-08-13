@@ -6,7 +6,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 export default function Home() {
   return (
     <main className="flex max-h-screen flex-col items-center justify-between p-24">
-      <div className="relative z-[-1] flex flex-col place-items-center -mt-8">
+      <div className="relative z-[-1] flex flex-col place-items-center -mt-16">
         <Image
           className="w-full h-auto max-w-[1200px]"
           src="/img/silbern.webp"
@@ -18,7 +18,7 @@ export default function Home() {
         />
         <p className="pt-4 text-lg">Financial Reishi Research Institute</p>
       </div>
-      <Button variant="outline" className="px-6 py-[1.2rem] text-xl mt-4">
+      <Button variant="outline" className="px-6 py-[1.2rem] text-lg mt-4">
         <Link
           href="https://calendly.com/yuma-omoprotocol/30min"
           target="_blank"
