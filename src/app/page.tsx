@@ -5,20 +5,20 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <main className="flex max-h-screen flex-col items-center justify-between p-24">
-      <div className="relative z-[-1] flex flex-col place-items-center -mt-16">
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 md:p-24">
+      <div className="relative z-10 flex flex-col place-items-center">
         <Image
-          className="w-full h-auto max-w-[1200px]"
+          className="w-full h-auto max-w-[1600px]"
           src="/img/silbern.webp"
           alt="Silbern"
-          width={1200}
-          height={800}
-          sizes="(max-width: 1200px) 100vw, 1200px"
+          width={1600}
+          height={1067}
+          sizes="(max-width: 1600px) 100vw, 1600px"
           priority
         />
-        <p className="pt-4 text-lg">Financial Reishi Research Institute</p>
+        <p className="pt-6 text-xl md:text-2xl">Financial Reishi Research Institute</p>
       </div>
-      <Button variant="outline" className="px-6 py-[1.2rem] text-lg mt-4">
+      <Button variant="outline" className="px-8 py-6 text-xl mt-8 relative z-10">
         <Link
           href="https://calendly.com/yuma-omoprotocol/30min"
           target="_blank"

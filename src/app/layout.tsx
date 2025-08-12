@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { RainBackground } from "@/components/ui/rain-background";
 import "./globals.css";
 import "./fonts.css";
 import Header from "./_components/Header";
@@ -17,9 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="font-departure-mono">
-        <ThemeProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <RainBackground />
           <Header />
           {children}
         </ThemeProvider>
