@@ -14,7 +14,7 @@ export default function Home() {
         <Header />
         <main className="flex-1">
         {/* Hero Section */}
-        <section className="flex min-h-screen flex-col items-center justify-center p-8 md:p-24 -mt-24">
+        <section className="flex min-h-[calc(100vh-80px)] md:min-h-screen flex-col items-center justify-center p-4 md:p-8 lg:p-24 pt-16 md:pt-8 lg:-mt-24">
           <div className="relative z-10 flex flex-col place-items-center">
             <Image
               className="w-full h-auto max-w-[1600px]"
@@ -25,35 +25,35 @@ export default function Home() {
               sizes="(max-width: 1600px) 100vw, 1600px"
               priority
             />
-            <p className="pt-6 text-xl md:text-2xl">Financial Reishi Research Institute</p>
+            <p className="pt-4 md:pt-6 text-lg md:text-xl lg:text-2xl text-center">Financial Reishi Research Institute</p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button variant="outline" className="px-8 py-6 text-xl relative z-10">
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 md:mt-8 w-full sm:w-auto px-4 sm:px-0">
+            <Button variant="outline" className="px-6 py-4 md:px-8 md:py-6 text-lg md:text-xl relative z-10 w-full sm:w-auto">
               <Link
                 href="https://calendly.com/yuma-omoprotocol/30min"
                 target="_blank"
-                className="flex items-center"
+                className="flex items-center justify-center"
               >
                 Schedule a call{" "}
-                <FaArrowUpRightFromSquare className="ml-4 mb-0.5 w-5 h-5" />
+                <FaArrowUpRightFromSquare className="ml-3 md:ml-4 mb-0.5 w-4 h-4 md:w-5 md:h-5" />
               </Link>
             </Button>
-            <Button className="px-8 py-6 text-xl relative z-10 bg-blue-500 hover:bg-blue-600 text-white">
+            <Button className="px-6 py-4 md:px-8 md:py-6 text-lg md:text-xl relative z-10 bg-blue-500 hover:bg-blue-600 text-white w-full sm:w-auto">
               <Link
                 href="/research"
-                className="flex items-center"
+                className="flex items-center justify-center"
               >
                 Explore Research{" "}
-                <FaArrowRight className="ml-4 mb-0.5 w-5 h-5" />
+                <FaArrowRight className="ml-3 md:ml-4 mb-0.5 w-4 h-4 md:w-5 md:h-5" />
               </Link>
             </Button>
           </div>
         </section>
 
         {/* Quick Links Section */}
-        <section className="px-8 md:px-24 pb-24 relative z-10">
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <section className="px-4 md:px-8 lg:px-24 pb-12 md:pb-24 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             <Link 
               href="/research"
               className="group bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-xl transition-all"

@@ -13,8 +13,9 @@ const Header: React.FC = () => {
   const { isCollapsed, setIsCollapsed } = useSidebar();
   
   return (
-    <header className="flex flex-col space-y-8 lg:flex-row justify-between items-center p-8 relative z-20">
-      <div className="flex items-center gap-4">
+    <header className="flex flex-col space-y-4 md:space-y-8 lg:flex-row justify-between items-center p-4 md:p-6 lg:p-8 relative z-20">
+      <div className="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-start">
+        {/* Desktop hamburger - only shows when sidebar is collapsed */}
         {isCollapsed && (
           <button
             type="button"
@@ -29,29 +30,36 @@ const Header: React.FC = () => {
             <FiMenu className="w-6 h-6 pointer-events-none" />
           </button>
         )}
-        <div className="text-5xl font-bold whitespace-nowrap">Quincy Labs</div>
+        {/* Responsive title with padding for mobile menu button */}
+        <div className="text-2xl md:text-4xl lg:text-5xl font-bold whitespace-nowrap ml-12 lg:ml-0">Quincy Labs</div>
+        {/* Mode toggle on mobile - visible in header */}
+        <div className="lg:hidden">
+          <ModeToggle />
+        </div>
       </div>
-      <div className="flex space-x-4">
-        {" "}
-        <Button variant="outline" className="px-6 py-[1.2rem] text-lg">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto">
+        <Button variant="outline" className="px-4 py-2 sm:px-6 sm:py-[1.2rem] text-base sm:text-lg w-full sm:w-auto">
           <Link
             href="https://quincylabs.substack.com/"
             target="_blank"
-            className="flex items-center"
+            className="flex items-center justify-center"
           >
-            Join our <BsSubstack className="ml-3 -mt-0.25 w-4 h-4" />
+            Join our <BsSubstack className="ml-2 sm:ml-3 -mt-0.25 w-4 h-4" />
           </Link>
         </Button>
-        <Button variant="outline" className="px-6 py-[1.2rem] text-lg">
+        <Button variant="outline" className="px-4 py-2 sm:px-6 sm:py-[1.2rem] text-base sm:text-lg w-full sm:w-auto">
           <Link
             href="https://x.com/Quincy_Labs"
             target="_blank"
-            className="flex items-center"
+            className="flex items-center justify-center"
           >
-            Follow on <FaXTwitter className="ml-3 -mt-0.25 w-4 h-4" />
+            Follow on <FaXTwitter className="ml-2 sm:ml-3 -mt-0.25 w-4 h-4" />
           </Link>
         </Button>
-        <ModeToggle />
+        {/* Mode toggle on desktop */}
+        <div className="hidden lg:block">
+          <ModeToggle />
+        </div>
       </div>
     </header>
   );

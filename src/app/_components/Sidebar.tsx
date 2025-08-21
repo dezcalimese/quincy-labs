@@ -229,13 +229,16 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Toggle */}
-      <button
-        onClick={() => setIsMobileOpen(!isMobileOpen)}
-        className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-900 shadow-lg lg:hidden"
-      >
-        {isMobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-      </button>
+      {/* Mobile Menu Toggle - Only show when sidebar is closed */}
+      {!isMobileOpen && (
+        <button
+          onClick={() => setIsMobileOpen(true)}
+          className="fixed top-4 left-4 z-[60] p-2 rounded-lg bg-white dark:bg-gray-900 shadow-lg lg:hidden border border-gray-200 dark:border-gray-700"
+          aria-label="Open menu"
+        >
+          <FiMenu size={24} />
+        </button>
+      )}
 
       {/* Mobile Overlay */}
       {isMobileOpen && (
@@ -246,30 +249,43 @@ export default function Sidebar() {
       )}
 
 
-      {/* Sidebar */}
-      {!isCollapsed && (
-        <aside
-          className={`
-            fixed lg:sticky top-0 h-screen z-40
-            bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
-            transform transition-all duration-300 ease-in-out
-            ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
-            lg:translate-x-0
-            w-72 flex-shrink-0
-          `}
-        >
+      {/* Sidebar - Show on mobile when open, on desktop when not collapsed */}
+      <aside
+        className={`
+          fixed lg:sticky top-0 h-screen z-50
+          bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
+          transform transition-all duration-300 ease-in-out
+          w-72 flex-shrink-0
+          ${/* Mobile behavior */ ''}
+          ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
+          ${/* Desktop behavior */ ''}
+          ${!isCollapsed ? "lg:translate-x-0" : "lg:-translate-x-full"}
+        `}
+      >
         <div className="h-full overflow-y-auto">
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-            <div className="flex items-center justify-between">
-              <div>
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
                 <h2 className="text-2xl font-bold">Quincy Labs</h2>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   Financial Reishi Research Institute
                 </p>
               </div>
+              {/* Close button for mobile */}
+              <button
+                onClick={() => {
+                  setIsMobileOpen(false);
+                  setIsCollapsed(true);
+                }}
+                className="lg:hidden p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ml-4 flex-shrink-0"
+                title="Close sidebar"
+              >
+                <FiX className="w-5 h-5" />
+              </button>
+              {/* Close button for desktop */}
               <button
                 onClick={() => setIsCollapsed(true)}
-                className="hidden lg:block p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                className="hidden lg:block p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ml-4 flex-shrink-0"
                 title="Close sidebar"
               >
                 <FiX className="w-5 h-5" />
@@ -308,8 +324,7 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-        </aside>
-      )}
+      </aside>
     </>
   );
 }
