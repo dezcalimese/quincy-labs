@@ -9,19 +9,34 @@ export default function PhilosophyPage() {
       <div className="space-y-12">
         {/* Financial Reishi */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">The Financial Reishi Concept</h2>
+          <h2 className="text-2xl font-bold mb-6">Financial Reishi Philosophy</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Just as the Reishi mushroom has been revered for millennia as the "mushroom of immortality" 
-              for its adaptogenic properties and ability to strengthen complex biological systems, we view 
-              Financial Reishi as the technological equivalent—systems that adapt, strengthen, and evolve 
-              to create resilient financial infrastructure.
+              Just as Reishi (霊子, Spirit Particles) forms the fundamental building blocks of all spiritual 
+              matter in existence—composing souls, spiritual bodies, and entire spiritual realms—we view 
+              Financial Reishi as the elemental particles that constitute all financial systems and economic 
+              interactions.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              Financial Reishi represents the underlying data, transactions, and value flows that exist 
+              everywhere in our economic reality, yet remain invisible and intangible to most. Like spiritual 
+              energy that can only be perceived and manipulated by those with heightened awareness, Financial 
+              Reishi requires sophisticated systems and trained practitioners to collect, concentrate, and 
+              reshape these fundamental economic particles.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              The Financial Reishi philosophy embodies the mastery of these elemental financial forces—gathering 
+              scattered value particles from across markets, converting raw economic matter into powerful 
+              financial constructs, and building platforms that allow users to stand upon and navigate the 
+              invisible currents of global finance. Through this approach, we create financial systems that 
+              transcend traditional limitations, constructing new economic realities from the very building 
+              blocks of value itself.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              The Financial Reishi philosophy embodies the creation of self-healing, self-optimizing 
-              financial systems that grow stronger through use, learning from every interaction to better 
-              serve their users. It represents the convergence of natural intelligence patterns with 
-              artificial systems, creating technology that works in harmony with human needs.
+              Just as Quincy masters can manifest platforms of pure Reishi to walk on air, Financial Reishi 
+              enables the creation of financial infrastructure that operates beyond conventional constraints, 
+              turning the invisible forces of economics into tangible, manipulable tools for users to achieve 
+              what was previously impossible.
             </p>
           </div>
         </section>
