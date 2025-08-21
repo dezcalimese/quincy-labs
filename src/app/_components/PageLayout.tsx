@@ -3,6 +3,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import { useSidebar } from "./SidebarContext";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -11,12 +12,14 @@ interface PageLayoutProps {
 }
 
 export default function PageLayout({ children, title, description }: PageLayoutProps) {
+  const { isCollapsed } = useSidebar();
+  
   return (
-    <div className="flex min-h-screen">
+    <div className="min-h-screen">
       <Sidebar />
       
-      {/* Main Content Area with Header - naturally flows next to sidebar */}
-      <div className="flex-1 flex flex-col transition-all duration-300">
+      {/* Main Content Area with Header - adjusts margin when sidebar is open */}
+      <div className={`flex flex-col transition-all duration-300 ${!isCollapsed ? 'lg:ml-72' : ''}`}>
         <Header />
         <main className="flex-1">
         <div className="p-4 md:p-8 lg:p-12 pt-2 md:pt-8">

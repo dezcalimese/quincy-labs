@@ -252,14 +252,14 @@ export default function Sidebar() {
       {/* Sidebar - Show on mobile when open, on desktop when not collapsed */}
       <aside
         className={`
-          fixed lg:sticky top-0 h-screen z-50
+          fixed top-0 h-screen z-50
           bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
           transform transition-all duration-300 ease-in-out
-          w-72 flex-shrink-0
+          w-72
           ${/* Mobile behavior */ ''}
           ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
           ${/* Desktop behavior */ ''}
-          ${!isCollapsed ? "lg:translate-x-0" : "lg:-translate-x-full"}
+          ${!isCollapsed ? "lg:translate-x-0" : "lg:-translate-x-full lg:w-0"}
         `}
       >
         <div className="h-full overflow-y-auto">

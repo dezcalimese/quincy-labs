@@ -1,16 +1,21 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { FaArrowUpRightFromSquare, FaArrowRight, FaFlask, FaCubes, FaBookOpen } from "react-icons/fa6";
 import Sidebar from "./_components/Sidebar";
 import Header from "./_components/Header";
+import { useSidebar } from "./_components/SidebarContext";
 
 export default function Home() {
+  const { isCollapsed } = useSidebar();
+  
   return (
-    <div className="flex min-h-screen">
+    <div className="min-h-screen">
       <Sidebar />
       
-      <div className="flex-1 flex flex-col transition-all duration-300">
+      <div className={`flex flex-col transition-all duration-300 ${!isCollapsed ? 'lg:ml-72' : ''}`}>
         <Header />
         <main className="flex-1">
         {/* Hero Section */}

@@ -1,7 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef, useMemo } from "react";
 import { animate, createScope, createSpring } from "animejs";
+import { useMobileDetect } from "@/hooks/useMobileDetect";
 
 interface RainBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children?: ReactNode;
@@ -18,14 +19,22 @@ export const RainBackground = ({
 }: RainBackgroundProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scopeRef = useRef<any>(null);
+  const isInitializedRef = useRef(false);
+  const isMobile = useMobileDetect();
+  
+  const adjustedDropCount = useMemo(() => {
+    return isMobile ? Math.floor(dropCount * 0.3) : dropCount;
+  }, [dropCount, isMobile]);
 
   useEffect(() => {
     if (!containerRef.current || typeof window === "undefined") return;
+    if (isInitializedRef.current && isMobile) return;
 
     const container = containerRef.current;
     
     // Create static stars (smaller, twinkling)
-    for (let i = 0; i < dropCount * 0.7; i++) {
+    const staticStarCount = Math.floor(adjustedDropCount * 0.7);
+    for (let i = 0; i < staticStarCount; i++) {
       const star = document.createElement("div");
       star.className = "static-star";
       
@@ -54,7 +63,8 @@ export const RainBackground = ({
     }
     
     // Create shooting stars (larger, moving diagonally)
-    for (let i = 0; i < dropCount * 0.3; i++) {
+    const shootingStarCount = Math.floor(adjustedDropCount * 0.3);
+    for (let i = 0; i < shootingStarCount; i++) {
       const shootingStar = document.createElement("div");
       shootingStar.className = "shooting-star";
       
@@ -94,58 +104,68 @@ export const RainBackground = ({
     // Create scoped animations
     scopeRef.current = createScope({ root: containerRef.current }).add(self => {
       
-      // Animate twinkling static stars
+      // Animate twinkling static stars (simplified for mobile)
       const staticStars = container.querySelectorAll('.static-star');
       staticStars.forEach((star, i) => {
+        const duration = isMobile ? 3000 + Math.random() * 2000 : 2000 + Math.random() * 3000;
+        const delay = isMobile ? i * 100 : i * 50;
+        
         animate(star, {
           opacity: [
-            { to: Math.random() * 0.4 + 0.5, duration: 1000 },
-            { to: Math.random() * 0.3 + 0.7, duration: 1000 }
+            { to: Math.random() * 0.4 + 0.5, duration: isMobile ? 1500 : 1000 },
+            { to: Math.random() * 0.3 + 0.7, duration: isMobile ? 1500 : 1000 }
           ],
-          duration: 2000 + Math.random() * 3000,
-          delay: i * 50,
+          duration: duration,
+          delay: delay,
           loop: true,
           direction: 'alternate',
           easing: 'inOut(2)'
         });
       });
       
-      // Animate shooting stars
+      // Animate shooting stars (less frequent on mobile)
       const shootingStars = container.querySelectorAll('.shooting-star');
       shootingStars.forEach((star, i) => {
         const fallDistance = window.innerHeight + 200;
-        const diagonalDistance = 300 + Math.random() * 200;
+        const diagonalDistance = isMobile ? 200 + Math.random() * 100 : 300 + Math.random() * 200;
+        const animDuration = isMobile ? 3000 + Math.random() * 1000 : 2000 + Math.random() * 1000;
+        const animDelay = isMobile ? i * 600 + Math.random() * 8000 : i * 300 + Math.random() * 5000;
         
         animate(star, {
           translateY: `${fallDistance}px`,
           translateX: `${diagonalDistance}px`,
           opacity: [
             { to: 0, duration: 0 },
-            { to: 1, duration: 200 },
-            { to: 0.8, duration: 1000 },
-            { to: 0, duration: 800 }
+            { to: 1, duration: isMobile ? 300 : 200 },
+            { to: 0.8, duration: isMobile ? 1500 : 1000 },
+            { to: 0, duration: isMobile ? 1200 : 800 }
           ],
           scale: [
-            { to: 1, duration: 200 },
-            { to: 0.3, duration: 1800 }
+            { to: 1, duration: isMobile ? 300 : 200 },
+            { to: 0.3, duration: isMobile ? 2700 : 1800 }
           ],
-          duration: 2000 + Math.random() * 1000,
-          delay: i * 300 + Math.random() * 5000,
+          duration: animDuration,
+          delay: animDelay,
           loop: true,
           easing: 'easeInQuad'
         });
       });
       
     });
+    
+    isInitializedRef.current = true;
 
     // Cleanup
     return () => {
       if (scopeRef.current) {
         scopeRef.current.revert();
       }
-      container.innerHTML = "";
+      if (container) {
+        container.innerHTML = "";
+      }
+      isInitializedRef.current = false;
     };
-  }, [dropCount, colors]);
+  }, [adjustedDropCount, colors, isMobile]);
 
   return (
     <div
