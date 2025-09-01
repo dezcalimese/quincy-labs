@@ -86,6 +86,36 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+
+            {/* Third Co-founder - Diamond */}
+            <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
+              <div className="max-w-3xl">
+                <h3 className="text-xl font-bold mb-2">Co-Founder & Director of Web3 Innovation</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Multi-certified blockchain professional and Web3 strategist with expertise spanning Bitcoin, Ethereum, 
+                  and Solana ecosystems. Certified Bitcoin Professional and Ethereum Professional with additional 
+                  specializations in smart contract development and Solana app architecture. Published researcher in 
+                  Web3 innovation culture, quantum technologies, and AI infrastructure, bringing a unique perspective 
+                  on the intersection of decentralized systems, artificial intelligence, and emerging digital ecosystems.
+                </p>
+                <div className="flex gap-4">
+                  <Link 
+                    href="https://linkedin.com/in/diamond-ray"
+                    target="_blank"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    <FaLinkedin className="w-5 h-5" />
+                  </Link>
+                  <Link 
+                    href="https://github.com/rayadamas"
+                    target="_blank"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
