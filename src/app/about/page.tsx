@@ -20,12 +20,12 @@ export default function AboutPage() {
 
         {/* Leadership */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Leadership</h2>
+          <h2 className="text-2xl font-lora mb-6">Leadership</h2>
           <div className="space-y-6">
             {/* First Co-founder */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
               <div className="max-w-3xl">
-                <h3 className="text-xl font-bold mb-2">Co-Founder & Principal Researcher</h3>
+                <h3 className="text-xl font-bold mb-2">Henry Ogedegbe Jr - Co-Founder & Principal Researcher</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   With a distinguished career spanning enterprise technology and cutting-edge research, 
                   bringing deep expertise from leadership roles at Verizon and AWS, combined 
@@ -60,7 +60,7 @@ export default function AboutPage() {
             {/* Second Co-founder - Dez */}
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
               <div className="max-w-3xl">
-                <h3 className="text-xl font-bold mb-2">Co-Founder & Chief Technology Officer</h3>
+                <h3 className="text-xl font-bold mb-2">Dez Calimese - Co-Founder & Chief Technology Officer</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Seasoned blockchain architect and founding engineer with deep expertise in smart contract 
                   development and DeFi infrastructure. Previously led engineering teams at Omo Protocol 
@@ -90,7 +90,7 @@ export default function AboutPage() {
             {/* Third Co-founder - Diamond */}
             <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
               <div className="max-w-3xl">
-                <h3 className="text-xl font-bold mb-2">Co-Founder & Director of Web3 Innovation</h3>
+                <h3 className="text-xl font-bold mb-2">Diamond Louden - Co-Founder & Director of Web3 Innovation</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Multi-certified blockchain professional and Web3 strategist with expertise spanning Bitcoin, Ethereum, 
                   and Solana ecosystems. Certified Bitcoin Professional and Ethereum Professional with additional 
@@ -121,7 +121,7 @@ export default function AboutPage() {
 
         {/* Background */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Our Background</h2>
+          <h2 className="text-2xl font-lora mb-6">Our Background</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-3">Enterprise & Blockchain Experience</h3>
@@ -180,7 +180,7 @@ export default function AboutPage() {
 
         {/* Values */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Our Values</h2>
+          <h2 className="text-2xl font-lora mb-6">Our Values</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl mb-3">🔬</div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
 
         {/* Partners & Collaborators - Coming Soon */}
         {/* <section>
-          <h2 className="text-2xl font-bold mb-6">Partners & Collaborators</h2>
+          <h2 className="text-2xl font-bold font-lora mb-6">Partners & Collaborators</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             We collaborate with leading institutions, research labs, and technology companies to 
             advance the state of the art in AI and blockchain technology.

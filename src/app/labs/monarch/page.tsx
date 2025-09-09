@@ -21,7 +21,7 @@ export default function MonarchPage() {
 
         {/* Platform Features */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Platform Capabilities</h2>
+          <h2 className="text-2xl font-lora mb-6">Platform Capabilities</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6">
               <FaBrain className="w-8 h-8 text-red-500 mb-4" />
@@ -87,7 +87,7 @@ export default function MonarchPage() {
 
         {/* Clinical Impact */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Clinical Impact</h2>
+          <h2 className="text-2xl font-lora mb-6">Clinical Impact</h2>
           <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
@@ -112,7 +112,7 @@ export default function MonarchPage() {
 
         {/* Specialties */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Medical Specialties</h2>
+          <h2 className="text-2xl font-lora mb-6">Medical Specialties</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
               <h3 className="font-semibold mb-3">Hematology</h3>
@@ -190,7 +190,7 @@ export default function MonarchPage() {
 
         {/* Integration */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Seamless Integration</h2>
+          <h2 className="text-2xl font-lora mb-6">Seamless Integration</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400">
               Monarch AI integrates seamlessly with existing healthcare infrastructure through 
@@ -223,7 +223,7 @@ export default function MonarchPage() {
 
         {/* Case Study */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Case Study: Sickle Cell Management</h2>
+          <h2 className="text-2xl font-lora mb-6">Case Study: Sickle Cell Management</h2>
           <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>

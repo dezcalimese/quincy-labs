@@ -66,7 +66,7 @@ export default function BlockchainPage() {
 
         {/* Research Topics */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Core Research Areas</h2>
+          <h2 className="text-2xl font-lora mb-6">Core Research Areas</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {researchTopics.map((topic) => (
               <div 
@@ -99,7 +99,7 @@ export default function BlockchainPage() {
 
         {/* Featured Project */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Featured: Monmouth L2</h2>
+          <h2 className="text-2xl font-lora mb-6">Featured: Monmouth L2</h2>
           <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -151,7 +151,7 @@ export default function BlockchainPage() {
 
         {/* Open Source */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Open Source Contributions</h2>
+          <h2 className="text-2xl font-lora mb-6">Open Source Contributions</h2>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
               <h4 className="font-semibold mb-2">Agent Wallets</h4>

@@ -27,7 +27,7 @@ export default function PageLayout({ children, title, description }: PageLayoutP
           {(title || description) && (
             <div className="mb-6 md:mb-8 pb-4 md:pb-6 border-b border-gray-200 dark:border-gray-800">
               {title && (
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-lora text-gray-900 dark:text-white">
                   {title}
                 </h1>
               )}

@@ -18,7 +18,7 @@ export default function StoryPage() {
 
         {/* Timeline */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">The Journey</h2>
+          <h2 className="text-2xl font-lora mb-8">The Journey</h2>
           <div className="space-y-8">
             <div className="flex gap-6">
               <div className="flex-shrink-0 w-32 text-right">
@@ -120,7 +120,7 @@ export default function StoryPage() {
 
         {/* Key Milestones */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Key Milestones</h2>
+          <h2 className="text-2xl font-lora mb-6">Key Milestones</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg p-6">
               <div className="text-3xl mb-3">🏆</div>
@@ -155,7 +155,7 @@ export default function StoryPage() {
 
         {/* Vision for the Future */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Looking Ahead</h2>
+          <h2 className="text-2xl font-lora mb-6">Looking Ahead</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Our story is just beginning. As AI and blockchain technologies mature, we see unprecedented 
@@ -176,7 +176,7 @@ export default function StoryPage() {
 
         {/* Call to Action */}
         <section className="bg-gray-50 dark:bg-gray-900 rounded-xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Be Part of Our Story</h2>
+          <h2 className="text-2xl font-bold font-lora mb-4">Be Part of Our Story</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
             Whether you're a researcher, developer, investor, or simply someone who believes in our 
             vision, there's a place for you in the Quincy Labs story.

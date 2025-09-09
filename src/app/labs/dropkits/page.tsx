@@ -147,7 +147,7 @@ export default function DropkitsPage() {
 
         {/* Projects Grid */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Featured Dropkits</h2>
+          <h2 className="text-2xl font-lora mb-6">Featured Dropkits</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {dropkits.map((kit) => (
               <div 
@@ -222,7 +222,7 @@ export default function DropkitsPage() {
 
         {/* Demo Apps */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Demo Applications</h2>
+          <h2 className="text-2xl font-lora mb-6">Demo Applications</h2>
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               Explore our demo applications to see Dropkits in action. Each demo includes 
@@ -277,7 +277,7 @@ export default function DropkitsPage() {
 
         {/* Contributing */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Contributing</h2>
+          <h2 className="text-2xl font-lora mb-6">Contributing</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400">
               We welcome contributions from the community! Whether you're fixing bugs, adding features, 
@@ -311,7 +311,7 @@ export default function DropkitsPage() {
 
         {/* CTA */}
         <section className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Start Building Today</h2>
+          <h2 className="text-2xl font-bold font-lora mb-4">Start Building Today</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
             All Dropkits are free, open-source, and ready to use in your projects. 
             Join thousands of developers building the future of AI and blockchain.

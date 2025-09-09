@@ -9,7 +9,7 @@ export default function PhilosophyPage() {
       <div className="space-y-12">
         {/* Financial Reishi */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Financial Reishi Philosophy</h2>
+          <h2 className="text-2xl font-lora mb-6">Financial Reishi Philosophy</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Just as Reishi (霊子, Spirit Particles) forms the fundamental building blocks of all spiritual 
@@ -43,7 +43,7 @@ export default function PhilosophyPage() {
 
         {/* TigerStyle Coding */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">TigerStyle Coding</h2>
+          <h2 className="text-2xl font-lora mb-6">TigerStyle Coding</h2>
           <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               TigerStyle represents our approach to software development—fierce precision combined with 
@@ -99,7 +99,7 @@ export default function PhilosophyPage() {
 
         {/* Research Philosophy */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Approach to Research</h2>
+          <h2 className="text-2xl font-lora mb-6">Approach to Research</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3">First Principles Thinking</h3>
@@ -127,7 +127,7 @@ export default function PhilosophyPage() {
 
         {/* Technology Philosophy */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Technology Beliefs</h2>
+          <h2 className="text-2xl font-lora mb-6">Technology Beliefs</h2>
           <div className="space-y-6">
             <div className="border-l-4 border-blue-500 pl-6">
               <h3 className="text-lg font-semibold mb-2">AI + Blockchain = The Future</h3>

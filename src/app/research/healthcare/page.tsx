@@ -67,7 +67,7 @@ export default function HealthcarePage() {
 
         {/* Research Topics */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Research Focus Areas</h2>
+          <h2 className="text-2xl font-lora mb-6">Research Focus Areas</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {researchTopics.map((topic) => (
               <div 
@@ -100,7 +100,7 @@ export default function HealthcarePage() {
 
         {/* Monarch AI Showcase */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Monarch AI: Healthcare Intelligence Platform</h2>
+          <h2 className="text-2xl font-lora mb-6">Monarch AI: Healthcare Intelligence Platform</h2>
           <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -156,7 +156,7 @@ export default function HealthcarePage() {
 
         {/* Partnerships */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Clinical Partnerships</h2>
+          <h2 className="text-2xl font-lora mb-6">Clinical Partnerships</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400">
               We collaborate with leading medical institutions and research centers to validate our 

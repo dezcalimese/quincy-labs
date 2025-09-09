@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RainBackground } from "@/components/ui/rain-background";
 import { SidebarProvider } from "./_components/SidebarContext";
+import { Lora } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
 import Header from "./_components/Header";
 
-// const inter = Inter({ subsets: ["latin"] });
+const lora = Lora({ 
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   title: "Quincy Labs",
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-departure-mono">
+      <body className={`font-departure-mono ${lora.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SidebarProvider>
             <RainBackground />

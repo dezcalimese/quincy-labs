@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'departure-mono': ['Departure Mono', 'monospace'],
+        'lora': ['var(--font-lora)', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

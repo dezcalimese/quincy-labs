@@ -1,3 +1,7 @@
+import { sanityClient } from '@/lib/sanity.client'
+import { postsQuery } from '@/lib/sanity.queries'
+import { BlogPostPreview } from '@/lib/sanity.types'
+import { formatDate, getCategoryDisplayName } from '@/lib/sanity.utils'
 import PageLayout from "@/app/_components/PageLayout";
 import Link from "next/link";
 import { FaPenNib, FaChartLine, FaCode, FaArrowRight } from "react-icons/fa6";
@@ -26,45 +30,18 @@ const categories = [
   }
 ];
 
-const recentPosts = [
-  {
-    title: "Memory Engineering for Large Language Models",
-    category: "Research Notes",
-    date: "March 15, 2024",
-    excerpt: "Exploring novel approaches to extend LLM context windows through hierarchical memory structures and attention mechanisms.",
-    readTime: "12 min read"
-  },
-  {
-    title: "The AI-Native Blockchain Thesis",
-    category: "Macro & Markets",
-    date: "March 10, 2024",
-    excerpt: "Why the next generation of blockchains will have artificial intelligence built into their core architecture.",
-    readTime: "8 min read"
-  },
-  {
-    title: "Building Agent Wallets: A Technical Guide",
-    category: "Tech Deep Dives",
-    date: "March 5, 2024",
-    excerpt: "Step-by-step implementation of self-custodial wallets for autonomous AI agents with practical code examples.",
-    readTime: "15 min read"
-  },
-  {
-    title: "Sickle Cell Crisis Prediction Using ML",
-    category: "Research Notes",
-    date: "February 28, 2024",
-    excerpt: "How we achieved 72-hour advance warning for vaso-occlusive crises using multimodal patient data.",
-    readTime: "10 min read"
-  },
-  {
-    title: "DeFi's Next Evolution: Intelligent Protocols",
-    category: "Macro & Markets",
-    date: "February 20, 2024",
-    excerpt: "The convergence of DeFi and AI will create self-optimizing financial protocols that adapt to market conditions.",
-    readTime: "6 min read"
+async function getRecentPosts() {
+  try {
+    return await sanityClient.fetch<BlogPostPreview[]>(postsQuery)
+  } catch (error) {
+    console.error('Error fetching posts:', error)
+    return []
   }
-];
+}
 
-export default function InsightsPage() {
+export default async function InsightsPage() {
+  const recentPosts = await getRecentPosts()
+
   return (
     <PageLayout
       title="Insights"
@@ -96,43 +73,61 @@ export default function InsightsPage() {
 
         {/* Recent Posts */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Recent Posts</h2>
-          <div className="space-y-6">
-            {recentPosts.map((post, index) => (
-              <article 
-                key={index}
-                className="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0"
-              >
-                <div className="flex items-start justify-between mb-2">
-                  <div className="flex items-center gap-3 text-sm text-gray-500">
-                    <span className="font-medium">{post.category}</span>
-                    <span>•</span>
-                    <time>{post.date}</time>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-2 hover:text-blue-500 transition-colors cursor-pointer">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-3">
-                  {post.excerpt}
-                </p>
-                <Link 
-                  href="#"
-                  className="inline-flex items-center gap-2 text-blue-500 hover:underline text-sm"
+          <h2 className="text-2xl font-bold font-lora mb-6">Recent Posts</h2>
+          {recentPosts.length > 0 ? (
+            <div className="space-y-6">
+              {recentPosts.map((post) => (
+                <article 
+                  key={post._id}
+                  className="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0"
                 >
-                  Read more <FaArrowRight className="w-3 h-3" />
-                </Link>
-              </article>
-            ))}
-          </div>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-3 text-sm text-gray-500">
+                      <span className="font-medium">{getCategoryDisplayName(post.category)}</span>
+                      <span>•</span>
+                      <time>{formatDate(post.publishedAt)}</time>
+                      <span>•</span>
+                      <span>{post.readTime} min read</span>
+                    </div>
+                  </div>
+                  <Link href={`/insights/${post.slug.current}`}>
+                    <h3 className="text-xl font-bold mb-2 hover:text-blue-500 transition-colors cursor-pointer">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="text-gray-600 dark:text-gray-400 mb-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Link 
+                      href={`/insights/${post.slug.current}`}
+                      className="inline-flex items-center gap-2 text-blue-500 hover:underline text-sm"
+                    >
+                      Read more <FaArrowRight className="w-3 h-3" />
+                    </Link>
+                    {post.author && (
+                      <div className="text-sm text-gray-500">
+                        by {post.author.name}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-500 mb-4">No posts available yet.</p>
+              <p className="text-sm text-gray-400">
+                Check back soon for our latest insights on AI, blockchain, and technology.
+              </p>
+            </div>
+          )}
         </section>
 
         {/* Newsletter CTA */}
         <section className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
+            <h2 className="text-2xl font-bold font-lora mb-4">Stay Updated</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               Get our latest research insights and technical deep dives delivered to your inbox.
             </p>

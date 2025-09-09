@@ -1,5 +1,6 @@
 import PageLayout from "@/app/_components/PageLayout";
-import { FaChartLine, FaCoins, FaCube, FaDollarSign, FaRocket, FaShield } from "react-icons/fa6";
+import { FaChartLine, FaCoins, FaCube, FaDollarSign, FaRocket, FaShield, FaBitcoin, FaEthereum } from "react-icons/fa6";
+import { SiBinance } from "react-icons/si";
 
 const ventureHighlights = [
   {
@@ -39,19 +40,64 @@ const ventureHighlights = [
 const portfolioMetrics = [
   {
     label: "Investment Period",
-    value: "2020 – 2022"
+    value: "2020 – Present"
   },
   {
     label: "Peak Portfolio Value",
-    value: "$3.3M+"
+    value: "~$10M"
   },
   {
     label: "Asset Classes",
-    value: "L1/L2, DeFi, NFTs"
+    value: "L1/L2, DeFi, NFTs, GPUs & Neo-Cloud"
   },
   {
     label: "Notable Holdings",
     value: "BAYC Mutant, Art Blocks"
+  }
+];
+
+const currentHoldings = [
+  {
+    symbol: "BTC",
+    name: "Bitcoin",
+    icon: <FaBitcoin className="w-5 h-5" />,
+    color: "text-orange-500"
+  },
+  {
+    symbol: "ETH",
+    name: "Ethereum", 
+    icon: <FaEthereum className="w-5 h-5" />,
+    color: "text-blue-500"
+  },
+  {
+    symbol: "XRP",
+    name: "XRP",
+    icon: <FaCoins className="w-5 h-5" />,
+    color: "text-blue-600"
+  },
+  {
+    symbol: "BNB",
+    name: "BNB",
+    icon: <SiBinance className="w-5 h-5" />,
+    color: "text-yellow-500"
+  },
+  {
+    symbol: "VIRTUAL",
+    name: "Virtual Protocol",
+    icon: <FaCube className="w-5 h-5" />,
+    color: "text-purple-500"
+  },
+  {
+    symbol: "HYPE",
+    name: "Hyperliquid",
+    icon: <FaRocket className="w-5 h-5" />,
+    color: "text-green-500"
+  },
+  {
+    symbol: "WLD",
+    name: "Worldcoin",
+    icon: <FaDollarSign className="w-5 h-5" />,
+    color: "text-gray-600"
   }
 ];
 
@@ -83,22 +129,38 @@ export default function VenturesPage() {
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
-            <h2 className="text-2xl font-bold mb-4">Quincy Labs Ventures (2020–2022)</h2>
+            <h2 className="text-2xl font-bold mb-4">Quincy Labs Ventures (2020–Present)</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Founded and operated a personal venture arm under Quincy Labs Ventures, deploying capital into 
               early-stage blockchain ecosystems. This self-directed initiative provided deep hands-on experience 
               with crypto capital allocation, risk management, and market cycle dynamics.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Through thesis-driven allocations into high-growth L1/L2 ecosystems, DeFi protocols, and NFTs, 
-              managed cumulative multi-million-dollar realized and unrealized gains across multiple market cycles.
+              Through thesis-driven allocations into high-growth L1/L2 ecosystems, DeFi protocols, NFTs, and emerging 
+              infrastructure like GPUs & Neo-Cloud, managed peak portfolio values approaching $10M across multiple cycles.
             </p>
+          </div>
+        </section>
+
+        {/* Current Holdings */}
+        <section>
+          <h2 className="text-2xl font-bold font-lora mb-8">Current Holdings</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {currentHoldings.map((holding) => (
+              <div key={holding.symbol} className="text-center p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:shadow-md transition-all">
+                <div className={`${holding.color} mx-auto mb-2 flex justify-center`}>
+                  {holding.icon}
+                </div>
+                <div className="text-sm font-bold mb-1">{holding.symbol}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-500">{holding.name}</div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Portfolio Metrics */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Portfolio Overview</h2>
+          <h2 className="text-2xl font-bold font-lora mb-8">Portfolio Overview</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {portfolioMetrics.map((metric) => (
               <div key={metric.label} className="text-center">
@@ -115,7 +177,7 @@ export default function VenturesPage() {
 
         {/* Key Investments */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Notable Investments</h2>
+          <h2 className="text-2xl font-bold font-lora mb-8">Notable Historical Investments</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {ventureHighlights.map((investment) => (
               <div
@@ -147,7 +209,7 @@ export default function VenturesPage() {
 
         {/* Investment Approach */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Investment Methodology</h2>
+          <h2 className="text-2xl font-bold font-lora mb-8">Investment Methodology</h2>
           <div className="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid gap-8 md:grid-cols-3">
               <div className="text-center">
@@ -177,7 +239,7 @@ export default function VenturesPage() {
 
         {/* Key Learnings */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Key Insights & Experience</h2>
+          <h2 className="text-2xl font-bold font-lora mb-8">Key Insights & Experience</h2>
           <div className="space-y-6">
             {learnings.map((learning) => (
               <div
@@ -200,7 +262,7 @@ export default function VenturesPage() {
 
         {/* Risk Management Experience */}
         <section>
-          <h2 className="text-2xl font-bold mb-8">Risk Management & Recovery</h2>
+          <h2 className="text-2xl font-bold font-lora mb-8">Risk Management & Recovery</h2>
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-6">
             <h3 className="font-semibold mb-4 flex items-center gap-2">
               <FaShield className="w-5 h-5 text-red-500" />

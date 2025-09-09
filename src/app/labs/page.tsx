@@ -101,7 +101,7 @@ export default function LabsPage() {
 
         {/* Innovation Pipeline */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Innovation Pipeline</h2>
+          <h2 className="text-2xl font-lora mb-6">Innovation Pipeline</h2>
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
@@ -138,7 +138,7 @@ export default function LabsPage() {
 
         {/* Call to Action */}
         <section className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Join Our Mission</h2>
+          <h2 className="text-2xl font-bold font-lora mb-4">Join Our Mission</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
             We're always looking for talented researchers, engineers, and partners who share our 
             vision of building transformative technology.

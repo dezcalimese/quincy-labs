@@ -66,7 +66,7 @@ export default function GenerativeAIPage() {
 
         {/* Research Topics */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Active Research Areas</h2>
+          <h2 className="text-2xl font-lora mb-6">Active Research Areas</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {researchTopics.map((topic) => (
               <div 
@@ -99,7 +99,7 @@ export default function GenerativeAIPage() {
 
         {/* Current Projects */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Current Projects</h2>
+          <h2 className="text-2xl font-lora mb-6">Current Projects</h2>
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <h3 className="text-xl font-bold mb-3">TigerStyle Coding Framework</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -116,7 +116,7 @@ export default function GenerativeAIPage() {
 
         {/* Publications */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Recent Publications</h2>
+          <h2 className="text-2xl font-lora mb-6">Recent Publications</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
               <h4 className="font-semibold">Memory-Augmented RAG: A Novel Approach to Knowledge Integration</h4>

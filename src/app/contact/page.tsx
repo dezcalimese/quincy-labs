@@ -87,7 +87,7 @@ export default function ContactPage() {
 
         {/* Partner Form */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Partner With Us</h2>
+          <h2 className="text-2xl font-bold font-lora mb-6">Partner With Us</h2>
           <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-8">
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -195,7 +195,7 @@ export default function ContactPage() {
 
         {/* Specific Partnership Types */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Partnership Opportunities</h2>
+          <h2 className="text-2xl font-bold font-lora mb-6">Partnership Opportunities</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3">For Investors</h3>

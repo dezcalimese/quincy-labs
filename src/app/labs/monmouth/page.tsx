@@ -22,7 +22,7 @@ export default function MonmouthPage() {
 
         {/* Key Features */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Core Innovations</h2>
+          <h2 className="text-2xl font-lora mb-6">Core Innovations</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6">
               <FaRobot className="w-8 h-8 text-purple-500 mb-4" />
@@ -88,7 +88,7 @@ export default function MonmouthPage() {
 
         {/* Technical Architecture */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Technical Architecture</h2>
+          <h2 className="text-2xl font-lora mb-6">Technical Architecture</h2>
           <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-8">
             <div className="space-y-6">
               <div>
@@ -122,7 +122,7 @@ export default function MonmouthPage() {
 
         {/* Use Cases */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Use Cases</h2>
+          <h2 className="text-2xl font-lora mb-6">Use Cases</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl mb-3">🤖</div>
@@ -171,7 +171,7 @@ export default function MonmouthPage() {
 
         {/* Roadmap */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Development Roadmap</h2>
+          <h2 className="text-2xl font-lora mb-6">Development Roadmap</h2>
           <div className="space-y-4">
             <div className="flex gap-4">
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">

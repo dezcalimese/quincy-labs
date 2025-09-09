@@ -66,7 +66,7 @@ export default function ResearchPage() {
       </div>
 
       <section className="mt-16">
-        <h2 className="text-3xl font-bold mb-6">Our Approach</h2>
+        <h2 className="text-3xl font-lora mb-6">Our Approach</h2>
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-gray-600 dark:text-gray-400">
             At the Financial Reishi Research Institute, we focus on foundational research that bridges 

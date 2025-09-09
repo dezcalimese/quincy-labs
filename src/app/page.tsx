@@ -36,7 +36,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-6 md:mt-8 w-full sm:w-auto px-4 sm:px-0">
             <Button variant="outline" className="px-6 py-4 md:px-8 md:py-6 text-lg md:text-xl relative z-10 w-full sm:w-auto">
               <Link
-                href="https://calendly.com/yuma-omoprotocol/30min"
+                href="https://cal.com/henry-ogedegbe-jr"
                 target="_blank"
                 className="flex items-center justify-center"
               >
@@ -64,7 +64,7 @@ export default function Home() {
               className="group bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-xl transition-all"
             >
               <FaFlask className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">Research</h3>
+              <h3 className="text-xl font-lora mb-2 group-hover:text-blue-500 transition-colors">Research</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Explore our work in AI, blockchain, and healthcare innovation
               </p>
@@ -75,7 +75,7 @@ export default function Home() {
               className="group bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-xl transition-all"
             >
               <FaCubes className="w-8 h-8 text-purple-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2 group-hover:text-purple-500 transition-colors">Labs</h3>
+              <h3 className="text-xl font-lora mb-2 group-hover:text-purple-500 transition-colors">Labs</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Discover Monmouth, Monarch, and our open-source Dropkits
               </p>
@@ -86,7 +86,7 @@ export default function Home() {
               className="group bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:shadow-xl transition-all"
             >
               <FaBookOpen className="w-8 h-8 text-green-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2 group-hover:text-green-500 transition-colors">Insights</h3>
+              <h3 className="text-xl font-lora mb-2 group-hover:text-green-500 transition-colors">Insights</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Read our latest thoughts on technology and markets
               </p>
