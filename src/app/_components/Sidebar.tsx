@@ -28,7 +28,8 @@ import {
   FaCode,
   FaUsers,
   FaCompass,
-  FaPhone
+  FaPhone,
+  FaMoneyBillTrendUp
 } from "react-icons/fa6";
 
 type NavItem = {
@@ -121,6 +122,11 @@ const navItems: NavItem[] = [
         icon: <FaCode className="w-3 h-3" />
       }
     ]
+  },
+  {
+    label: "Ventures",
+    href: "/ventures",
+    icon: <FaMoneyBillTrendUp className="w-4 h-4" />
   },
   {
     label: "About",
