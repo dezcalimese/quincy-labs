@@ -154,12 +154,13 @@ export default function BlockchainPage() {
           <h2 className="text-2xl font-lora mb-6">Open Source Contributions</h2>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
-              <h4 className="font-semibold mb-2">Agent Wallets</h4>
+              <h4 className="font-semibold mb-2">ElizaOS Cross-Chain Plugin</h4>
               <p className="text-sm text-gray-500 dark:text-gray-500">
-                Self-custodial wallets for autonomous AI agents
+                Cross-chain transactions plugin for ElizaOS leveraging Lit Protocol's Programmable Key Pairs 
+                and threshold cryptography, enabling secure decentralized key management for AI agents
               </p>
             </div>
-            <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
+            {/* <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-4">
               <h4 className="font-semibold mb-2">ExEx Framework</h4>
               <p className="text-sm text-gray-500 dark:text-gray-500">
                 Modular execution extension toolkit
@@ -170,7 +171,7 @@ export default function BlockchainPage() {
               <p className="text-sm text-gray-500 dark:text-gray-500">
                 Core building blocks for DeFi protocols
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>

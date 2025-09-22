@@ -170,7 +170,7 @@ export default function MonmouthPage() {
         </section>
 
         {/* Roadmap */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-lora mb-6">Development Roadmap</h2>
           <div className="space-y-4">
             <div className="flex gap-4">
@@ -218,7 +218,7 @@ export default function MonmouthPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </PageLayout>
   );

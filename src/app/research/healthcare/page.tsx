@@ -155,7 +155,7 @@ export default function HealthcarePage() {
         </section>
 
         {/* Partnerships */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-lora mb-6">Clinical Partnerships</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400">
@@ -178,7 +178,7 @@ export default function HealthcarePage() {
               <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Active Clinical Trials</p>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </PageLayout>
   );

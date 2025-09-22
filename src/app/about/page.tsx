@@ -27,9 +27,13 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-xl font-bold mb-2">Henry Ogedegbe Jr - Co-Founder & Principal Researcher</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  With a distinguished career spanning enterprise technology and cutting-edge research, 
-                  bringing deep expertise from leadership roles at Verizon and AWS, combined 
-                  with recognition in Marquis Who's Who for contributions to technology innovation.
+                  Henry Ogedegbe Jr is co-founder and Principal Researcher at Quincy Labs. Previously, Henry held
+                  leadership roles at Verizon and AWS, where he architected enterprise-scale technology solutions
+                  and led cross-functional teams in cloud infrastructure development. Henry has been recognized
+                  in Marquis Who's Who for his contributions to technology innovation and has extensive experience
+                  in AI/ML systems design and blockchain research. He began exploring cryptocurrency in 2017 and
+                  has since contributed to multiple Web3 projects. Henry holds advanced certifications in cloud
+                  architecture, distributed systems, Secureum, and Encode Club.
                 </p>
                 <div className="flex gap-4">
                   <Link 
@@ -62,11 +66,9 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-xl font-bold mb-2">Dez Calimese - Co-Founder & Chief Technology Officer</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Seasoned blockchain architect and founding engineer with deep expertise in smart contract 
-                  development and DeFi infrastructure. Previously led engineering teams at Omo Protocol 
-                  and Bricks Exchange, architecting ERC4626 vaults, AI agent integrations, and cross-chain 
-                  solutions that secured over $1M in funding. Brings extensive experience in Solidity, 
-                  Rust, and full-stack development from ConsenSys-certified roots to enterprise-scale implementations.
+                  Dez Calimese is co-founder and Chief Technology Officer at Quincy Labs. Dez has
+                  founding engineering experience at Omo Protocol where he
+                  architected ERC4626 vaults, AI agent integrations, and cross-chain solutions as well as leadership experience at Bricks Exchange as the lead frontend engineer among other startup roles. Dez holds certifications from ConsenSys, Secureum, and Encode Club in blockchain development.
                 </p>
                 <div className="flex gap-4">
                   <Link 
@@ -92,11 +94,11 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-xl font-bold mb-2">Diamond Louden - Co-Founder & Director of Web3 Innovation</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Multi-certified blockchain professional and Web3 strategist with expertise spanning Bitcoin, Ethereum, 
-                  and Solana ecosystems. Certified Bitcoin Professional and Ethereum Professional with additional 
-                  specializations in smart contract development and Solana app architecture. Published researcher in 
-                  Web3 innovation culture, quantum technologies, and AI infrastructure, bringing a unique perspective 
-                  on the intersection of decentralized systems, artificial intelligence, and emerging digital ecosystems.
+                  Diamond Louden is co-founder and Director of Web3 Innovation at Quincy Labs. Previously, Diamond
+                  was a research analyst focusing on emerging blockchain ecosystems and quantum computing applications
+                  in cryptography. Diamond is a Certified Bitcoin Professional and Certified Ethereum Professional
+                  with additional specializations in Solana app architecture and smart contract development. He holds certifications from the
+                  C4 Institute, Solana Foundation, and Encode Club.
                 </p>
                 <div className="flex gap-4">
                   <Link 

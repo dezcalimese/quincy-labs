@@ -19,10 +19,11 @@ const labsProjects = [
     description: "Comprehensive AI platform for clinical decision support and patient care",
     icon: <FaNotesMedical className="w-8 h-8" />,
     href: "/labs/monarch",
-    status: "Beta Testing",
+    status: "In Development",
     statusColor: "text-blue-500",
     features: ["Clinical AI", "Risk Prediction", "HIPAA Compliant", "Real-time Analysis"]
   },
+  /*
   {
     title: "Dropkits",
     subtitle: "Developer Tools",
@@ -33,6 +34,7 @@ const labsProjects = [
     statusColor: "text-green-500",
     features: ["Agent Wallets", "SDK Libraries", "Testing Tools", "Demo Apps"]
   }
+  */
 ];
 
 export default function LabsPage() {

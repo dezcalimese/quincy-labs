@@ -86,7 +86,7 @@ export default function MonarchPage() {
         </section>
 
         {/* Clinical Impact */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-lora mb-6">Clinical Impact</h2>
           <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-4 gap-6 text-center">
@@ -108,10 +108,10 @@ export default function MonarchPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Specialties */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-lora mb-6">Medical Specialties</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
@@ -186,10 +186,10 @@ export default function MonarchPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Integration */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl font-lora mb-6">Seamless Integration</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400">
@@ -219,7 +219,7 @@ export default function MonarchPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Case Study */}
         <section>
@@ -238,17 +238,17 @@ export default function MonarchPage() {
                 <h3 className="text-lg font-semibold mb-3">Our Solution</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Monarch AI's predictive models analyze patient data to forecast crisis events 
-                  up to 72 hours in advance, enabling preventive interventions that reduce 
-                  hospitalizations by 42% and improve quality of life.
+                  up to 72 hours in advance, enabling preventive interventions aiming to reduce 
+                  hospitalizations and improve quality of life.
                 </p>
               </div>
             </div>
-            <div className="mt-6 p-4 bg-green-100 dark:bg-green-900/20 rounded-lg">
+            {/* <div className="mt-6 p-4 bg-green-100 dark:bg-green-900/20 rounded-lg">
               <p className="text-sm text-green-800 dark:text-green-300">
                 <strong>Result:</strong> 42% reduction in crisis-related hospitalizations, 
                 $850K annual savings per 100 patients, 3.2x improvement in patient-reported outcomes.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>

@@ -83,7 +83,7 @@ const currentHoldings = [
   },
   {
     symbol: "VIRTUAL",
-    name: "Virtual Protocol",
+    name: "Virtuals Protocol",
     icon: <FaCube className="w-5 h-5" />,
     color: "text-purple-500"
   },
@@ -94,10 +94,16 @@ const currentHoldings = [
     color: "text-green-500"
   },
   {
-    symbol: "WLD",
-    name: "Worldcoin",
-    icon: <FaDollarSign className="w-5 h-5" />,
-    color: "text-gray-600"
+    symbol: "ASTER",
+    name: "Aster",
+    icon: <FaCoins className="w-5 h-5" />,
+    color: "text-indigo-500"
+  },
+  {
+    symbol: "AVNT",
+    name: "Avantis",
+    icon: <FaCube className="w-5 h-5" />,
+    color: "text-teal-500"
   }
 ];
 
@@ -145,7 +151,7 @@ export default function VenturesPage() {
         {/* Current Holdings */}
         <section>
           <h2 className="text-2xl font-bold font-lora mb-8">Current Holdings</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-4 gap-4">
             {currentHoldings.map((holding) => (
               <div key={holding.symbol} className="text-center p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:shadow-md transition-all">
                 <div className={`${holding.color} mx-auto mb-2 flex justify-center`}>

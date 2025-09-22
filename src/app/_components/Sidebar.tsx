@@ -16,9 +16,9 @@ import {
   FiMenu,
   FiX
 } from "react-icons/fi";
-import { 
-  FaFlask, 
-  FaMicrochip, 
+import {
+  FaFlask,
+  FaMicrochip,
   FaHeartPulse,
   FaRobot,
   FaNotesMedical,
@@ -29,7 +29,8 @@ import {
   FaUsers,
   FaCompass,
   FaPhone,
-  FaMoneyBillTrendUp
+  FaMoneyBillTrendUp,
+  FaCloud
 } from "react-icons/fa6";
 
 type NavItem = {
@@ -91,9 +92,9 @@ const navItems: NavItem[] = [
         icon: <FaNotesMedical className="w-3 h-3" />
       },
       {
-        label: "Dropkits",
-        href: "/labs/dropkits",
-        icon: <FaCode className="w-3 h-3" />
+        label: "Sandstorm",
+        href: "/labs/sandstorm",
+        icon: <FaCloud className="w-3 h-3" />
       }
     ]
   },
@@ -304,7 +305,7 @@ export default function Sidebar() {
         </nav>
 
           {/* Optional Creative Routes */}
-          <div className="mt-8 p-4 border-t border-gray-200 dark:border-gray-800">
+          {/* <div className="mt-8 p-4 border-t border-gray-200 dark:border-gray-800">
             <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider">
               Coming Soon
             </p>
@@ -328,7 +329,7 @@ export default function Sidebar() {
                 🗺️ Ontology Map
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </aside>
     </>

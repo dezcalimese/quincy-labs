@@ -41,62 +41,6 @@ export default function PhilosophyPage() {
           </div>
         </section>
 
-        {/* TigerStyle Coding */}
-        <section>
-          <h2 className="text-2xl font-lora mb-6">TigerStyle Coding</h2>
-          <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              TigerStyle represents our approach to software development—fierce precision combined with 
-              elegant simplicity. Like a tiger's movements that are both powerful and graceful, our code 
-              embodies strength without unnecessary complexity.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold mb-3">Core Principles</h3>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span><strong>Clarity over cleverness:</strong> Code should be immediately understandable</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span><strong>Performance by design:</strong> Efficiency built in from the start</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span><strong>Fearless refactoring:</strong> Continuous improvement without hesitation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span><strong>Test-driven confidence:</strong> Every line backed by verification</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-3">In Practice</h3>
-                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span>Modular architecture with clear boundaries</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span>Comprehensive documentation as first-class citizen</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span>Aggressive optimization where it matters</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-orange-500">→</span>
-                    <span>Open-source by default, proprietary by exception</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Research Philosophy */}
         <section>
           <h2 className="text-2xl font-lora mb-6">Approach to Research</h2>
@@ -151,13 +95,13 @@ export default function PhilosophyPage() {
                 augment human intelligence while preserving privacy, autonomy, and dignity.
               </p>
             </div>
-            <div className="border-l-4 border-orange-500 pl-6">
+            {/* <div className="border-l-4 border-orange-500 pl-6">
               <h3 className="text-lg font-semibold mb-2">Decentralization as Default</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Centralized systems create single points of failure and control. We architect for 
                 decentralization from day one, ensuring resilience and user sovereignty.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
 

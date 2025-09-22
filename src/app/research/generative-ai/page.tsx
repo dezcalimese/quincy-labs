@@ -101,15 +101,18 @@ export default function GenerativeAIPage() {
         <section>
           <h2 className="text-2xl font-lora mb-6">Current Projects</h2>
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
-            <h3 className="text-xl font-bold mb-3">TigerStyle Coding Framework</h3>
+            <h3 className="text-xl font-bold mb-3">Sandstorm</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              An innovative approach to code generation that combines advanced prompting techniques 
-              with memory-augmented models to produce more reliable and maintainable code.
+              A vendor-agnostic Sandbox Routing Layer that provides one 5-line SDK (sandstorm.run(code, spec)) 
+              that dispatches to E2B, Daytona, Modal, Apple Containers, Morph, your own Kubernetes cluster, 
+              or rootless edge agents. Features smart arbitrage engine for optimal backend selection, 
+              unified telemetry & billing, and pluggable policies for custom isolation rules.
             </p>
             <div className="flex gap-2 flex-wrap">
-              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Code Generation</span>
-              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Prompt Engineering</span>
-              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Memory Systems</span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Sandbox Routing</span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Smart Arbitrage</span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Unified Telemetry</span>
+              <span className="px-3 py-1 bg-white dark:bg-gray-900 rounded-full text-sm">Pluggable Policies</span>
             </div>
           </div>
         </section>
@@ -117,15 +120,8 @@ export default function GenerativeAIPage() {
         {/* Publications */}
         <section>
           <h2 className="text-2xl font-lora mb-6">Recent Publications</h2>
-          <div className="space-y-4">
-            <div className="border-l-4 border-blue-500 pl-4">
-              <h4 className="font-semibold">Memory-Augmented RAG: A Novel Approach to Knowledge Integration</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-500">Forthcoming, 2025</p>
-            </div>
-            <div className="border-l-4 border-blue-500 pl-4">
-              <h4 className="font-semibold">Efficient Fine-tuning Strategies for Domain-Specific LLMs</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-500">In Review</p>
-            </div>
+          <div className="text-center py-8">
+            <p className="text-gray-500 dark:text-gray-400 text-lg">Coming Soon</p>
           </div>
         </section>
       </div>
