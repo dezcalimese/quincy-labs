@@ -27,13 +27,15 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-xl font-bold mb-2">Henry Ogedegbe Jr - Co-Founder & Principal Researcher</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Henry Ogedegbe Jr is co-founder and Principal Researcher at Quincy Labs. Previously, Henry held
-                  leadership roles at Verizon and AWS, where he architected enterprise-scale technology solutions
-                  and led cross-functional teams in cloud infrastructure development. Henry has been recognized
-                  in Marquis Who's Who for his contributions to technology innovation and has extensive experience
-                  in AI/ML systems design and blockchain research. He began exploring cryptocurrency in 2017 and
-                  has since contributed to multiple Web3 projects. Henry holds advanced certifications in cloud
-                  architecture, distributed systems, Secureum, and Encode Club.
+                  Henry Ogedegbe Jr is Co-Founder and Principal Researcher at Quincy Labs, where he leads research
+                  at the frontier of AI, blockchain, and distributed systems. His career spans Apple during the
+                  iPhone era, the San Francisco 49ers' VenueNext startup designing AWS-powered payment platforms
+                  for Super Bowl events, Verizon's 5G Innovation Labs building GPU-accelerated edge infrastructure
+                  for XR/VR/AR, and AWS architecting large-scale AI/ML deployments. Recognized in Marquis Who's
+                  Who in America for technology innovation, Henry holds advanced certifications including CompTIA
+                  Security+, Linux+, Network+, Cisco CCNA, and SUSE Linux Administrator. Since entering crypto
+                  in 2017, he has contributed to DeFi, consensus research, and agentic systems, and today drives
+                  Monmouth—an AI-native blockchain optimized for real-time agents and cross-chain interoperability.
                 </p>
                 <div className="flex gap-4">
                   <Link 
@@ -66,9 +68,17 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-xl font-bold mb-2">Dez Calimese - Co-Founder & Chief Technology Officer</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Dez Calimese is co-founder and Chief Technology Officer at Quincy Labs. Dez has
-                  founding engineering experience at Omo Protocol where he
-                  architected ERC4626 vaults, AI agent integrations, and cross-chain solutions as well as leadership experience at Bricks Exchange as the lead frontend engineer among other startup roles. Dez holds certifications from ConsenSys, Secureum, and Encode Club in blockchain development.
+                  Dez Calimese is Co-Founder and Chief Technology Officer at Quincy Labs, where he leads blockchain
+                  and AI agent research and development. He has founding engineering experience at Omo Protocol,
+                  architecting ERC4626 standardized vaults and developing AI agent plugins for DeFi automation and
+                  previously was the Lead Frontend Developer at Bricks Exchange, where he led a four-person
+                  development team through frontend application development. With advanced certifications from
+                  ConsenSys Academy, Encode Club, and Secureum in smart contract development and security, Dez
+                  specializes in Solidity, cross-chain infrastructure, and AI-crypto integrations, having built
+                  decentralized applications ranging from multi-signature wallets to staking protocols while
+                  contributing to the advancement of autonomous financial systems and blockchain interoperability.
+                  Beyond development, he also brings 10 years of experience as a music producer, bridging creative
+                  and technical disciplines in his approach to innovation.
                 </p>
                 <div className="flex gap-4">
                   <Link 
@@ -92,13 +102,16 @@ export default function AboutPage() {
             {/* Third Co-founder - Diamond */}
             <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
               <div className="max-w-3xl">
-                <h3 className="text-xl font-bold mb-2">Diamond Louden - Co-Founder & Director of Web3 Innovation</h3>
+                <h3 className="text-xl font-bold mb-2">Diamond Louden - Co-Founder of Monmouth & Director of Web3 Innovation</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Diamond Louden is co-founder and Director of Web3 Innovation at Quincy Labs. Previously, Diamond
-                  was a research analyst focusing on emerging blockchain ecosystems and quantum computing applications
-                  in cryptography. Diamond is a Certified Bitcoin Professional and Certified Ethereum Professional
-                  with additional specializations in Solana app architecture and smart contract development. He holds certifications from the
-                  C4 Institute, Solana Foundation, and Encode Club.
+                  Diamond Louden is Co-Founder of Monmouth and Director of Web3 Innovation at Quincy Labs, where
+                  he advances AI-native blockchain research, decentralized finance, and cross-chain infrastructure.
+                  At Accenture, he contributed to projects with Amazon, Mondelez International, Maserati, and
+                  Walgreens Boots Alliance, specializing in business analysis, workflow optimization, and technical
+                  writing for enterprise-scale digital initiatives. A Certified Bitcoin and Ethereum Professional
+                  with additional training in Solana, ZK proofs, and blockchain security, Diamond has published
+                  widely on innovation culture, DeFi, and quantum implications for Web3 while driving open-source
+                  R&D and ecosystem growth across global markets.
                 </p>
                 <div className="flex gap-4">
                   <Link 
@@ -246,7 +259,7 @@ export default function AboutPage() {
                 Our Philosophy →
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Learn about TigerStyle coding, Financial Reishi, and our approach to innovation
+                Learn about Financial Reishi and our approach to innovation
               </p>
             </Link>
             <Link
