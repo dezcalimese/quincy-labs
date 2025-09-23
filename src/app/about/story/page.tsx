@@ -129,27 +129,13 @@ export default function StoryPage() {
                 Honored for outstanding contributions to technology and innovation
               </p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg p-6">
+            {/* <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg p-6">
               <div className="text-3xl mb-3">🚀</div>
               <h3 className="font-semibold mb-2">Monmouth Testnet Launch</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Successfully deployed the world's first AI-native blockchain testnet
               </p>
-            </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg p-6">
-              <div className="text-3xl mb-3">🏥</div>
-              <h3 className="font-semibold mb-2">Clinical Partnership</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Monarch AI adopted by major healthcare institutions for patient care
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-lg p-6">
-              <div className="text-3xl mb-3">⭐</div>
-              <h3 className="font-semibold mb-2">Open Source Impact</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Dropkits surpass 2 million downloads and 450+ contributors
-              </p>
-            </div>
+            </div> */}
           </div>
         </section>
 

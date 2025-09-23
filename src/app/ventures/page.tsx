@@ -104,6 +104,12 @@ const currentHoldings = [
     name: "Avantis",
     icon: <FaCube className="w-5 h-5" />,
     color: "text-teal-500"
+  },
+  {
+    symbol: "BARD",
+    name: "Lombard",
+    icon: <FaShield className="w-5 h-5" />,
+    color: "text-amber-500"
   }
 ];
 

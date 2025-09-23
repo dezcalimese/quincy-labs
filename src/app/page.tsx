@@ -77,7 +77,7 @@ export default function Home() {
               <FaCubes className="w-8 h-8 text-purple-500 mb-4" />
               <h3 className="text-xl font-lora mb-2 group-hover:text-purple-500 transition-colors">Labs</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Discover Monmouth, Monarch, and our open-source Dropkits
+                Discover Monmouth, Monarch, and Sandstorm
               </p>
             </Link>
             
