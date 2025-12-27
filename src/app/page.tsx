@@ -23,7 +23,7 @@ export default function Home() {
           <div className="relative z-10 flex flex-col place-items-center">
             <Image
               className="w-full h-auto max-w-[1600px]"
-              src="/img/silbern.webp"
+              src="/img/silbern-isometric.png"
               alt="Silbern"
               width={1600}
               height={1067}
