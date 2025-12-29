@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsSubstack } from "react-icons/bs";
@@ -31,7 +32,16 @@ const Header: React.FC = () => {
           </button>
         )}
         {/* Responsive title with padding for mobile menu button */}
-        <div className="text-2xl md:text-4xl lg:text-5xl font-bold whitespace-nowrap ml-12 lg:ml-0">Quincy Labs</div>
+        <div className="flex font-lora items-center gap-2 md:gap-3 text-2xl md:text-4xl lg:text-5xl font-bold whitespace-nowrap ml-12 lg:ml-0">
+          <Image
+            src="/quincy-logo.svg"
+            alt="Quincy Labs Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 dark:invert"
+          />
+          Quincy Labs
+        </div>
         {/* Mode toggle on mobile - visible in header */}
         <div className="lg:hidden">
           <ModeToggle />

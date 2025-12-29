@@ -16,6 +16,11 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Quincy Labs",
   description: "Financial Reishi Research Institute",
+  icons: {
+    icon: "/quincy-logo.svg",
+    shortcut: "/quincy-logo.svg",
+    apple: "/quincy-logo.svg",
+  },
 };
 
 export default function RootLayout({

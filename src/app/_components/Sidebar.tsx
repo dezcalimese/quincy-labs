@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "./SidebarContext";
 import { 
@@ -273,7 +274,16 @@ export default function Sidebar() {
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold">Quincy Labs</h2>
+                <h2 className="flex font-lora items-center gap-2 text-2xl font-bold">
+                  <Image
+                    src="/quincy-logo.svg"
+                    alt="Quincy Labs Logo"
+                    width={28}
+                    height={28}
+                    className="w-12 h-12 dark:invert"
+                  />
+                  Quincy Labs
+                </h2>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   Financial Reishi Research Institute
                 </p>
