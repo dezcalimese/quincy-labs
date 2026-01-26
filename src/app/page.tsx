@@ -22,7 +22,7 @@ export default function Home() {
           <section className="h-full flex flex-col items-center justify-center p-4 md:p-6 lg:p-8">
             <div className="relative z-10 flex flex-col place-items-center max-w-5xl mx-auto">
               {/* Hero Image with blur-in animation */}
-              <div className="opacity-0 animate-blur-in">
+              <div className="animate-blur-in">
                 <Image
                   className="w-full h-auto max-w-[900px]"
                   src="/img/silbern-isometric.png"
@@ -36,7 +36,7 @@ export default function Home() {
 
               {/* Tagline with staggered fade-up */}
               <div className="mt-4 text-center">
-                <p className="opacity-0 animate-fade-up stagger-3 text-lg md:text-xl lg:text-2xl text-body text-muted-foreground dark:text-white">
+                <p className="animate-fade-up stagger-3 text-lg md:text-xl lg:text-2xl text-body text-muted-foreground dark:text-white">
                   Financial Reishi Research Institute
                 </p>
               </div>
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 mt-6 w-full sm:w-auto px-4 sm:px-0">
               <Button
                 variant="outline"
-                className="opacity-0 animate-fade-up stagger-4 px-5 py-4 md:px-6 md:py-5 text-base relative z-10 w-full sm:w-auto border-border/50 hover:border-cyan-500/50 hover:shadow-glow-sm transition-all duration-base ease-out-expo"
+                className="animate-fade-up stagger-4 px-5 py-4 md:px-6 md:py-5 text-base relative z-10 w-full sm:w-auto border-border/50 hover:border-cyan-500/50 hover:shadow-glow-sm transition-all duration-base ease-out-expo"
               >
                 <Link
                   href="https://cal.com/henry-ogedegbe-jr"
@@ -58,7 +58,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button
-                className="opacity-0 animate-fade-up stagger-5 px-5 py-4 md:px-6 md:py-5 text-base relative z-10 w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white shadow-glow-sm hover:shadow-glow transition-all duration-base ease-out-expo"
+                className="animate-fade-up stagger-5 px-5 py-4 md:px-6 md:py-5 text-base relative z-10 w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white shadow-glow-sm hover:shadow-glow transition-all duration-base ease-out-expo"
               >
                 <Link
                   href="/research"
@@ -75,7 +75,7 @@ export default function Home() {
               {/* Research Card */}
               <Link
                 href="/research"
-                className="group card-enhanced p-3 md:p-4 opacity-0 animate-fade-up stagger-6"
+                className="group card-enhanced p-3 md:p-4 animate-fade-up stagger-6"
               >
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-500 group-hover:bg-cyan-500/20 transition-colors duration-base">
@@ -94,7 +94,7 @@ export default function Home() {
               {/* Labs Card */}
               <Link
                 href="/labs"
-                className="group card-enhanced p-3 md:p-4 opacity-0 animate-fade-up stagger-7"
+                className="group card-enhanced p-3 md:p-4 animate-fade-up stagger-7"
               >
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="p-2 rounded-lg bg-gold-500/10 text-gold-500 group-hover:bg-gold-500/20 transition-colors duration-base">
@@ -113,7 +113,7 @@ export default function Home() {
               {/* Insights Card */}
               <Link
                 href="/insights"
-                className="group card-enhanced p-3 md:p-4 opacity-0 animate-fade-up stagger-8"
+                className="group card-enhanced p-3 md:p-4 animate-fade-up stagger-8"
               >
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:bg-emerald-500/20 transition-colors duration-base">
