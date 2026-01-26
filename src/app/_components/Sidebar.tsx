@@ -5,12 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "./SidebarContext";
-import { 
-  FiChevronDown, 
+import {
+  FiChevronDown,
   FiChevronRight,
-  FiChevronLeft,
-  FiHome, 
-  FiLayers, 
+  FiHome,
+  FiLayers,
   FiBookOpen,
   FiUser,
   FiMail,
@@ -29,7 +28,6 @@ import {
   FaCode,
   FaUsers,
   FaCompass,
-  FaPhone,
   FaMoneyBillTrendUp,
   FaCloud
 } from "react-icons/fa6";
@@ -54,22 +52,22 @@ const navItems: NavItem[] = [
       {
         label: "Overview",
         href: "/research",
-        icon: <FiLayers className="w-3 h-3" />
+        icon: <FiLayers className="w-3.5 h-3.5" />
       },
       {
         label: "Generative AI",
         href: "/research/generative-ai",
-        icon: <FaRobot className="w-3 h-3" />
+        icon: <FaRobot className="w-3.5 h-3.5" />
       },
       {
         label: "Blockchain",
         href: "/research/blockchain",
-        icon: <FaMicrochip className="w-3 h-3" />
+        icon: <FaMicrochip className="w-3.5 h-3.5" />
       },
       {
         label: "Healthcare",
         href: "/research/healthcare",
-        icon: <FaHeartPulse className="w-3 h-3" />
+        icon: <FaHeartPulse className="w-3.5 h-3.5" />
       }
     ]
   },
@@ -80,22 +78,22 @@ const navItems: NavItem[] = [
       {
         label: "Overview",
         href: "/labs",
-        icon: <FiLayers className="w-3 h-3" />
+        icon: <FiLayers className="w-3.5 h-3.5" />
       },
       {
         label: "Monmouth",
         href: "/labs/monmouth",
-        icon: <FaMicrochip className="w-3 h-3" />
+        icon: <FaMicrochip className="w-3.5 h-3.5" />
       },
       {
         label: "Monarch",
         href: "/labs/monarch",
-        icon: <FaNotesMedical className="w-3 h-3" />
+        icon: <FaNotesMedical className="w-3.5 h-3.5" />
       },
       {
         label: "Sandstorm",
         href: "/labs/sandstorm",
-        icon: <FaCloud className="w-3 h-3" />
+        icon: <FaCloud className="w-3.5 h-3.5" />
       }
     ]
   },
@@ -106,22 +104,22 @@ const navItems: NavItem[] = [
       {
         label: "All Posts",
         href: "/insights",
-        icon: <FiLayers className="w-3 h-3" />
+        icon: <FiLayers className="w-3.5 h-3.5" />
       },
       {
         label: "Research Notes",
         href: "/insights/research-notes",
-        icon: <FaPenNib className="w-3 h-3" />
+        icon: <FaPenNib className="w-3.5 h-3.5" />
       },
       {
         label: "Macro & Markets",
         href: "/insights/macro-markets",
-        icon: <FaChartLine className="w-3 h-3" />
+        icon: <FaChartLine className="w-3.5 h-3.5" />
       },
       {
         label: "Tech Deep Dives",
         href: "/insights/tech-deep-dives",
-        icon: <FaCode className="w-3 h-3" />
+        icon: <FaCode className="w-3.5 h-3.5" />
       }
     ]
   },
@@ -137,17 +135,17 @@ const navItems: NavItem[] = [
       {
         label: "Team",
         href: "/about",
-        icon: <FaUsers className="w-3 h-3" />
+        icon: <FaUsers className="w-3.5 h-3.5" />
       },
       {
         label: "Philosophy",
         href: "/about/philosophy",
-        icon: <FaCompass className="w-3 h-3" />
+        icon: <FaCompass className="w-3.5 h-3.5" />
       },
       {
         label: "Story",
         href: "/about/story",
-        icon: <FiBookOpen className="w-3 h-3" />
+        icon: <FiBookOpen className="w-3.5 h-3.5" />
       }
     ]
   },
@@ -191,43 +189,54 @@ export default function Sidebar() {
             href={item.href}
             onClick={() => setIsMobileOpen(false)}
             className={`
-              flex items-center gap-3 px-4 py-2.5 text-sm
-              transition-all duration-200
-              hover:bg-gray-100 dark:hover:bg-gray-800
-              ${active 
-                ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-semibold border-l-4 border-blue-500" 
-                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              group flex items-center gap-3 px-4 py-2.5 text-sm
+              transition-all duration-base ease-out-expo
+              hover:bg-secondary/80 rounded-lg mx-2
+              ${active
+                ? "bg-secondary text-foreground font-medium"
+                : "text-muted-foreground hover:text-foreground"
               }
               ${depth > 0 ? "pl-10" : ""}
             `}
           >
-            {item.icon}
-            <span>{item.label}</span>
+            <span className={`transition-colors duration-base ${active ? "text-cyan-500" : "group-hover:text-cyan-500"}`}>
+              {item.icon}
+            </span>
+            <span className="tracking-mono-tight">{item.label}</span>
+            {active && (
+              <span className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-500" />
+            )}
           </Link>
         ) : (
           <button
             onClick={() => hasChildren && toggleSection(item.label)}
             className={`
-              flex items-center justify-between w-full px-4 py-2.5 text-sm
-              transition-all duration-200
-              hover:bg-gray-100 dark:hover:bg-gray-800
-              text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white
+              group flex items-center justify-between w-[calc(100%-1rem)] mx-2 px-4 py-2.5 text-sm
+              transition-all duration-base ease-out-expo
+              hover:bg-secondary/80 rounded-lg
+              text-muted-foreground hover:text-foreground
             `}
           >
             <div className="flex items-center gap-3">
-              {item.icon}
-              <span>{item.label}</span>
+              <span className="group-hover:text-cyan-500 transition-colors duration-base">
+                {item.icon}
+              </span>
+              <span className="tracking-mono-tight">{item.label}</span>
             </div>
             {hasChildren && (
-              <span className="transition-transform duration-200">
-                {isExpanded ? <FiChevronDown /> : <FiChevronRight />}
+              <span className="transition-transform duration-base ease-out-expo">
+                {isExpanded ? (
+                  <FiChevronDown className="w-4 h-4" />
+                ) : (
+                  <FiChevronRight className="w-4 h-4" />
+                )}
               </span>
             )}
           </button>
         )}
-        
+
         {hasChildren && isExpanded && (
-          <div className="mt-1">
+          <div className="mt-1 space-y-0.5">
             {item.children!.map(child => renderNavItem(child, depth + 1))}
           </div>
         )}
@@ -237,109 +246,87 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Toggle - Only show when sidebar is closed */}
+      {/* Mobile Menu Toggle */}
       {!isMobileOpen && (
         <button
           onClick={() => setIsMobileOpen(true)}
-          className="fixed top-4 left-4 z-[60] p-2 rounded-lg bg-white dark:bg-gray-900 shadow-lg lg:hidden border border-gray-200 dark:border-gray-700"
+          className="fixed top-4 left-4 z-[60] p-2.5 rounded-lg bg-card shadow-elevated lg:hidden border border-border/50 hover:border-cyan-500/30 transition-all duration-base ease-out-expo"
           aria-label="Open menu"
         >
-          <FiMenu size={24} />
+          <FiMenu size={22} />
         </button>
       )}
 
       {/* Mobile Overlay */}
       {isMobileOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-foreground/20 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-base"
           onClick={() => setIsMobileOpen(false)}
         />
       )}
 
-
-      {/* Sidebar - Show on mobile when open, on desktop when not collapsed */}
+      {/* Sidebar */}
       <aside
         className={`
           fixed top-0 h-screen z-50
-          bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800
-          transform transition-all duration-300 ease-in-out
+          bg-card/95 backdrop-blur-md border-r border-border/50
+          transform transition-all duration-slow ease-out-expo
           w-72
-          ${/* Mobile behavior */ ''}
           ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
-          ${/* Desktop behavior */ ''}
           ${!isCollapsed ? "lg:translate-x-0" : "lg:-translate-x-full lg:w-0"}
         `}
       >
         <div className="h-full overflow-y-auto">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+          {/* Header */}
+          <div className="p-5 border-b border-border/50">
             <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <h2 className="flex font-lora items-center gap-2 text-2xl font-bold">
+              <Link href="/" className="flex-1 group" onClick={() => setIsMobileOpen(false)}>
+                <div className="flex items-center gap-3">
                   <Image
                     src="/quincy-logo.svg"
                     alt="Quincy Labs Logo"
-                    width={28}
-                    height={28}
-                    className="w-12 h-12 dark:invert"
+                    width={36}
+                    height={36}
+                    className="w-10 h-10 dark:invert transition-transform duration-base ease-out-expo group-hover:scale-105"
                   />
-                  Quincy Labs
-                </h2>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  Financial Reishi Research Institute
-                </p>
-              </div>
+                  <div>
+                    <h2 className="font-lora text-xl font-bold tracking-tight">
+                      Quincy Labs
+                    </h2>
+                    <p className="text-eyebrow mt-0.5">
+                      Research Institute
+                    </p>
+                  </div>
+                </div>
+              </Link>
+
               {/* Close button for mobile */}
               <button
                 onClick={() => {
                   setIsMobileOpen(false);
                   setIsCollapsed(true);
                 }}
-                className="lg:hidden p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ml-4 flex-shrink-0"
+                className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-all duration-base ease-out-expo ml-3 flex-shrink-0"
                 title="Close sidebar"
               >
                 <FiX className="w-5 h-5" />
               </button>
+
               {/* Close button for desktop */}
               <button
                 onClick={() => setIsCollapsed(true)}
-                className="hidden lg:block p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ml-4 flex-shrink-0"
+                className="hidden lg:block p-2 hover:bg-secondary rounded-lg transition-all duration-base ease-out-expo ml-3 flex-shrink-0"
                 title="Close sidebar"
               >
                 <FiX className="w-5 h-5" />
               </button>
             </div>
           </div>
-        
-        <nav className="py-4">
-          {navItems.map(item => renderNavItem(item))}
-        </nav>
 
-          {/* Optional Creative Routes */}
-          {/* <div className="mt-8 p-4 border-t border-gray-200 dark:border-gray-800">
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider">
-              Coming Soon
-            </p>
-            <div className="space-y-2">
-              <Link
-                href="/library"
-                className="block text-sm text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400"
-              >
-                📚 Library
-              </Link>
-              <Link
-                href="/playground"
-                className="block text-sm text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400"
-              >
-                🎮 Playground
-              </Link>
-              <Link
-                href="/ontology"
-                className="block text-sm text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400"
-              >
-                🗺️ Ontology Map
-              </Link>
-            </div>
-          </div> */}
+          {/* Navigation */}
+          <nav className="py-4 space-y-1">
+            {navItems.map(item => renderNavItem(item))}
+          </nav>
         </div>
       </aside>
     </>
