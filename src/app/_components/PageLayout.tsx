@@ -9,41 +9,47 @@ interface PageLayoutProps {
   children: React.ReactNode;
   title?: string;
   description?: string;
+  eyebrow?: string;
 }
 
-export default function PageLayout({ children, title, description }: PageLayoutProps) {
+export default function PageLayout({ children, title, description, eyebrow }: PageLayoutProps) {
   const { isCollapsed } = useSidebar();
-  
+
   return (
     <div className="min-h-screen">
       <Sidebar />
-      
-      {/* Main Content Area with Header - adjusts margin when sidebar is open */}
-      <div className={`flex flex-col transition-all duration-300 ${!isCollapsed ? 'lg:ml-72' : ''}`}>
+
+      {/* Main Content Area with Header */}
+      <div className={`flex flex-col transition-all duration-slow ease-out-expo ${!isCollapsed ? 'lg:ml-72' : ''}`}>
         <Header />
         <main className="flex-1">
-        <div className="p-4 md:p-8 lg:p-12 pt-2 md:pt-8">
-          {/* Page Header */}
-          {(title || description) && (
-            <div className="mb-6 md:mb-8 pb-4 md:pb-6 border-b border-gray-200 dark:border-gray-800">
-              {title && (
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-lora text-gray-900 dark:text-white">
-                  {title}
-                </h1>
-              )}
-              {description && (
-                <p className="mt-2 text-base md:text-lg text-gray-600 dark:text-gray-400">
-                  {description}
-                </p>
-              )}
+          <div className="p-4 md:p-8 lg:p-12 pt-2 md:pt-8">
+            {/* Page Header with staggered animation */}
+            {(title || description) && (
+              <div className="mb-8 md:mb-12 pb-6 md:pb-8 border-b border-border/50">
+                {eyebrow && (
+                  <p className="text-eyebrow mb-3 opacity-0 animate-fade-down">
+                    {eyebrow}
+                  </p>
+                )}
+                {title && (
+                  <h1 className="text-display-md md:text-display-lg lg:text-[2rem] font-lora opacity-0 animate-fade-up stagger-1">
+                    {title}
+                  </h1>
+                )}
+                {description && (
+                  <p className="mt-4 text-base md:text-lg text-muted-foreground text-body max-w-3xl opacity-0 animate-fade-up stagger-2">
+                    {description}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {/* Page Content */}
+            <div className="relative z-10 opacity-0 animate-fade-up stagger-3">
+              {children}
             </div>
-          )}
-          
-          {/* Page Content */}
-          <div className="relative z-10">
-            {children}
           </div>
-        </div>
         </main>
       </div>
     </div>
