@@ -5,13 +5,13 @@ import { FaMicrochip, FaNotesMedical, FaCode, FaRocket } from "react-icons/fa6";
 const labsProjects = [
   {
     title: "Monmouth",
-    subtitle: "AI-Native Blockchain",
-    description: "Next-generation Layer 2 with native AI execution and intelligent consensus",
+    subtitle: "Agent-Native Settlement Chain",
+    description: "Settlement blockchain for autonomous AI agents built on Commonware consensus and REVM execution",
     icon: <FaMicrochip className="w-8 h-8" />,
     href: "/labs/monmouth",
     status: "In Development",
     statusColor: "text-yellow-500",
-    features: ["AI Consensus", "Smart Execution", "10K+ TPS", "Sub-second finality"]
+    features: ["BFT Consensus", "ERC-8004", "Agent Classifier", "Custom Precompiles"]
   },
   {
     title: "Monarch",

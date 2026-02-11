@@ -107,7 +107,7 @@ export default function StoryPage() {
               <div className="flex-grow pl-6 -mt-2">
                 <h3 className="text-lg font-semibold mb-2">Building the Future</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Today, we're actively developing Monmouth L2, advancing Monarch AI with clinical 
+                  Today, we're actively developing Monmouth, advancing Monarch AI with clinical
                   partners, and releasing open-source tools that empower developers worldwide. Our 
                   research spans memory engineering, blockchain infrastructure, and healthcare AI, 
                   all unified by the vision of creating intelligent, decentralized systems that serve 
