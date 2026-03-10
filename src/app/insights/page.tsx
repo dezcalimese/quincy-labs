@@ -2,9 +2,17 @@ import { sanityClient } from '@/lib/sanity.client'
 import { postsQuery } from '@/lib/sanity.queries'
 import { BlogPostPreview } from '@/lib/sanity.types'
 import { formatDate, getCategoryDisplayName } from '@/lib/sanity.utils'
+import { getSubstackPosts, SubstackPost } from '@/lib/substack'
 import PageLayout from "@/app/_components/PageLayout";
 import Link from "next/link";
 import { FaPenNib, FaChartLine, FaCode, FaArrowRight } from "react-icons/fa6";
+
+export const revalidate = 3600 // revalidate Substack feed every hour
+
+const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000
+function isNewPost(publishedAt: string): boolean {
+  return Date.now() - new Date(publishedAt).getTime() < THREE_DAYS_MS
+}
 
 const categories = [
   {
@@ -30,6 +38,48 @@ const categories = [
   }
 ];
 
+type UnifiedPost = {
+  _id: string
+  title: string
+  href: string
+  publishedAt: string
+  readTime: number
+  excerpt: string
+  author: string
+  category: string
+  source: 'sanity' | 'substack'
+}
+
+function unifyPosts(sanityPosts: BlogPostPreview[], substackPosts: SubstackPost[]): UnifiedPost[] {
+  const fromSanity: UnifiedPost[] = sanityPosts.map((p) => ({
+    _id: p._id,
+    title: p.title,
+    href: `/insights/${p.slug.current}`,
+    publishedAt: p.publishedAt,
+    readTime: p.readTime,
+    excerpt: p.excerpt,
+    author: p.author?.name || 'Quincy Labs',
+    category: getCategoryDisplayName(p.category),
+    source: 'sanity' as const,
+  }))
+
+  const fromSubstack: UnifiedPost[] = substackPosts.map((p) => ({
+    _id: p._id,
+    title: p.title,
+    href: `/insights/substack/${p.slug}`,
+    publishedAt: p.publishedAt,
+    readTime: p.readTime,
+    excerpt: p.excerpt,
+    author: p.author,
+    category: 'Substack',
+    source: 'substack' as const,
+  }))
+
+  return [...fromSanity, ...fromSubstack].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  )
+}
+
 async function getRecentPosts() {
   try {
     return await sanityClient.fetch<BlogPostPreview[]>(postsQuery)
@@ -40,7 +90,12 @@ async function getRecentPosts() {
 }
 
 export default async function InsightsPage() {
-  const recentPosts = await getRecentPosts()
+  const [sanityPosts, substackPosts] = await Promise.all([
+    getRecentPosts(),
+    getSubstackPosts(),
+  ])
+
+  const allPosts = unifyPosts(sanityPosts, substackPosts)
 
   return (
     <PageLayout
@@ -74,23 +129,30 @@ export default async function InsightsPage() {
         {/* Recent Posts */}
         <section>
           <h2 className="text-2xl font-bold font-lora mb-6">Recent Posts</h2>
-          {recentPosts.length > 0 ? (
+          {allPosts.length > 0 ? (
             <div className="space-y-6">
-              {recentPosts.map((post) => (
-                <article 
+              {allPosts.map((post) => (
+                <article
                   key={post._id}
                   className="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-3 text-sm text-gray-500">
-                      <span className="font-medium">{getCategoryDisplayName(post.category)}</span>
+                      <span className={`font-medium ${post.source === 'substack' ? 'text-orange-500' : ''}`}>
+                        {post.category}
+                      </span>
+                      {isNewPost(post.publishedAt) && (
+                        <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-500 rounded-full">
+                          New
+                        </span>
+                      )}
                       <span>•</span>
                       <time>{formatDate(post.publishedAt)}</time>
                       <span>•</span>
                       <span>{post.readTime} min read</span>
                     </div>
                   </div>
-                  <Link href={`/insights/${post.slug.current}`}>
+                  <Link href={post.href}>
                     <h3 className="text-xl font-bold mb-2 hover:text-blue-500 transition-colors cursor-pointer">
                       {post.title}
                     </h3>
@@ -99,17 +161,15 @@ export default async function InsightsPage() {
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link 
-                      href={`/insights/${post.slug.current}`}
+                    <Link
+                      href={post.href}
                       className="inline-flex items-center gap-2 text-blue-500 hover:underline text-sm"
                     >
                       Read more <FaArrowRight className="w-3 h-3" />
                     </Link>
-                    {post.author && (
-                      <div className="text-sm text-gray-500">
-                        by {post.author.name}
-                      </div>
-                    )}
+                    <div className="text-sm text-gray-500">
+                      by {post.author}
+                    </div>
                   </div>
                 </article>
               ))}
@@ -133,7 +193,7 @@ export default async function InsightsPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Link
-                href="https://quincylabs.substack.com/"
+                href="https://0xlordgrace.substack.com/"
                 target="_blank"
                 className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
               >

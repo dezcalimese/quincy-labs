@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { FaArrowUpRightFromSquare, FaArrowRight, FaFlask, FaCubes, FaBookOpen } from "react-icons/fa6";
+import NewBlogBadge from "@/components/NewBlogBadge";
 import Sidebar from "./_components/Sidebar";
 import Header from "./_components/Header";
 import { useSidebar } from "./_components/SidebarContext";
@@ -122,6 +123,7 @@ export default function Home() {
                   <span className="text-sm md:text-base font-lora group-hover:text-emerald-500 transition-colors duration-base">
                     Insights
                   </span>
+                  <NewBlogBadge />
                   <FaArrowRight className="w-3 h-3 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-base" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-2 leading-snug">

@@ -428,6 +428,87 @@
 }
 
 /* ================================
+   SUBSTACK ARTICLE CONTENT
+   ================================ */
+.substack-content p {
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+.substack-content h1,
+.substack-content h2,
+.substack-content h3 {
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.substack-content h1 {
+  font-size: 2em;
+}
+
+.substack-content h2 {
+  font-size: 1.5em;
+}
+
+.substack-content h3 {
+  font-size: 1.25em;
+}
+
+.substack-content blockquote {
+  border-left: 3px solid hsl(var(--cyan-500));
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+.substack-content ul,
+.substack-content ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+
+.substack-content li {
+  margin-bottom: 0.5em;
+  line-height: 1.7;
+}
+
+.substack-content img {
+  border-radius: 0.5rem;
+  margin: 2em auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.substack-content hr {
+  margin: 2em 0;
+  border-color: hsl(var(--border));
+}
+
+.substack-content a {
+  color: hsl(var(--cyan-500));
+  text-decoration: none;
+}
+
+.substack-content a:hover {
+  text-decoration: underline;
+}
+
+.substack-content table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+}
+
+.substack-content th,
+.substack-content td {
+  padding: 0.5em 0.75em;
+  border: 1px solid hsl(var(--border));
+  text-align: left;
+}
+
+/* ================================
    COMPONENT ENHANCEMENTS
    ================================ */
 @layer components {
