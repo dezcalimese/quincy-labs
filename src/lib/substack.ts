@@ -9,7 +9,7 @@ interface SubstackFeed {
 const SUBSTACK_FEEDS: SubstackFeed[] = [
   { url: 'https://0xlordgrace.substack.com/feed', author: 'Quincy Labs' },
   { url: 'https://quincylabs.substack.com/feed', author: 'Henry' },
-  // { url: 'https://diamond.substack.com/feed', author: 'Diamond' },
+  { url: 'https://diaraylouden.substack.com/feed', author: 'Diamond' },
 ]
 
 export interface SubstackPost {
