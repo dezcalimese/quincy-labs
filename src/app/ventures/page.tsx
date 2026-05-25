@@ -135,21 +135,23 @@ export default function VenturesPage() {
   return (
     <PageLayout
       title="Ventures"
-      description="Self-directed on-chain venture portfolio and capital allocation experience"
+      description="Capital allocation research across crypto, AI infrastructure, and frontier compute markets"
     >
       <div className="space-y-16">
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
-            <h2 className="text-2xl font-bold mb-4">Quincy Labs Ventures (2020–Present)</h2>
+            <h2 className="text-2xl font-bold mb-4">Capital Allocation Research (2020–Present)</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Founded and operated a personal venture arm under Quincy Labs Ventures, deploying capital into 
-              early-stage blockchain ecosystems. This self-directed initiative provided deep hands-on experience 
-              with crypto capital allocation, risk management, and market cycle dynamics.
+              Quincy Labs Ventures conducts capital allocation research across crypto, AI infrastructure, 
+              and frontier compute markets. Through thesis-driven deployments into early-stage blockchain 
+              ecosystems, we develop frameworks for evaluating infrastructure-layer investments at the 
+              intersection of AI and decentralized systems.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Through thesis-driven allocations into high-growth L1/L2 ecosystems, DeFi protocols, NFTs, and emerging 
-              infrastructure like GPUs & Neo-Cloud, managed peak portfolio values approaching $10M across multiple cycles.
+              Our allocation history spans L1/L2 ecosystems, DeFi protocols, NFTs, and emerging 
+              infrastructure including GPUs and neo-cloud compute, with peak portfolio values 
+              approaching $10M across multiple market cycles.
             </p>
           </div>
         </section>

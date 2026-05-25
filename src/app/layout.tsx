@@ -16,7 +16,7 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "Quincy Labs",
-  description: "Financial Reishi Research Institute",
+  description: "AI Infrastructure Lab for Autonomous Agents",
   icons: {
     icon: "/quincy-logo.svg",
     shortcut: "/quincy-logo.svg",

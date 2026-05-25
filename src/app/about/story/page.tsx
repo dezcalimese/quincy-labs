@@ -77,9 +77,9 @@ export default function StoryPage() {
                 <h3 className="text-lg font-semibold mb-2">Healthcare Initiative</h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   A personal experience with the healthcare system's inefficiencies sparked the creation 
-                  of Monarch AI. We realized that AI could transform healthcare delivery, particularly 
-                  for underserved conditions like sickle cell disease, leading to partnerships with 
-                  medical institutions.
+                  of Red Cell Systems. We realized that AI could transform healthcare delivery, particularly 
+                  for underserved conditions like sickle cell disease, building intelligence platforms 
+                  that unify fragmented medical data into actionable understanding.
                 </p>
               </div>
             </div>
@@ -92,8 +92,8 @@ export default function StoryPage() {
               <div className="flex-grow pb-8 border-l border-gray-300 dark:border-gray-700 pl-6 -mt-2">
                 <h3 className="text-lg font-semibold mb-2">Quincy Labs Founded</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  The Financial Reishi Research Institute was formally established, bringing together 
-                  our various research initiatives under one roof. Recognition in Marquis Who's Who 
+                  Quincy Labs was formally established as an AI infrastructure lab, bringing together 
+                  our research initiatives under one roof. Recognition in Marquis Who's Who 
                   validated our approach and attracted world-class collaborators.
                 </p>
               </div>
@@ -107,11 +107,11 @@ export default function StoryPage() {
               <div className="flex-grow pl-6 -mt-2">
                 <h3 className="text-lg font-semibold mb-2">Building the Future</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Today, we're actively developing Monmouth, advancing Monarch AI with clinical
-                  partners, and releasing open-source tools that empower developers worldwide. Our 
-                  research spans memory engineering, blockchain infrastructure, and healthcare AI, 
-                  all unified by the vision of creating intelligent, decentralized systems that serve 
-                  humanity.
+                  Today, we're actively developing Monmouth, advancing Red Cell Systems as a 
+                  healthcare intelligence platform, and releasing open-source tools that empower 
+                  developers worldwide. Our research spans agent infrastructure, settlement systems, 
+                  and longitudinal intelligence — all unified by the thesis that autonomous agents 
+                  need purpose-built infrastructure.
                 </p>
               </div>
             </div>
@@ -149,9 +149,9 @@ export default function StoryPage() {
               that learn, adapt, and evolve while remaining transparent, trustless, and user-controlled.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              The Financial Reishi vision extends beyond technology. We're building infrastructure for a 
-              future where artificial intelligence augments human capability, where financial systems serve 
-              everyone equally, and where breakthrough medical treatments are accessible to all.
+              Our vision extends beyond technology. We're building infrastructure for a 
+              future where autonomous agents augment human capability, where decentralized systems serve 
+              everyone equally, and where healthcare intelligence is accessible to all.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
               Join us as we write the next chapter—one where technology truly serves humanity's highest 

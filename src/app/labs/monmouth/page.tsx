@@ -5,17 +5,17 @@ export default function MonmouthPage() {
   return (
     <PageLayout
       title="Monmouth"
-      description="Agent-native settlement blockchain for autonomous AI agents"
+      description="Settlement infrastructure for autonomous AI agents — enabling identity, coordination, payments, verification, and execution guarantees"
     >
       <div className="space-y-12">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl p-8 md:p-12">
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold mb-4">Agent-Native Settlement Chain</h2>
+            <h2 className="text-3xl font-bold mb-4">Settlement Infrastructure for Autonomous Agents</h2>
             <p className="text-lg opacity-90">
-              Monmouth is a settlement blockchain designed for autonomous AI agents to transact
-              safely across blockchain ecosystems. Built on Commonware (BFT Simplex consensus,
-              QMDB storage) with REVM v34 execution.
+              Monmouth is settlement infrastructure for autonomous AI agents — enabling identity, 
+              coordination, payments, verification, and execution guarantees across blockchain 
+              ecosystems. Built on Commonware (BFT Simplex consensus, QMDB storage) with REVM v34 execution.
             </p>
           </div>
         </section>

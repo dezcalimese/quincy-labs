@@ -4,27 +4,27 @@ import { FaRobot, FaMicrochip, FaHeartPulse, FaArrowRight } from "react-icons/fa
 
 const researchAreas = [
   {
-    title: "Generative AI",
-    description: "Memory engineering, RAG systems, and LLM optimization",
+    title: "Agent Infrastructure",
+    description: "Memory, RAG, inference, and runtime systems for autonomous agents",
     icon: <FaRobot className="w-7 h-7" />,
     href: "/research/generative-ai",
-    highlights: ["Memory Engineering", "RAG Architectures", "LLM Fine-tuning", "Agent Systems"],
+    highlights: ["Memory Engineering", "RAG Architectures", "Inference Optimization", "Agent Runtime Systems"],
     color: "cyan"
   },
   {
-    title: "Blockchain Infrastructure",
-    description: "Monmouth settlement chain, stablecoins, and agent infrastructure",
+    title: "Agent Settlement",
+    description: "Monmouth, blockchain coordination, and execution guarantees",
     icon: <FaMicrochip className="w-7 h-7" />,
     href: "/research/blockchain",
-    highlights: ["Monmouth", "Stablecoin Mechanisms", "ERC-8004", "Agent Infrastructure"],
+    highlights: ["Monmouth", "Execution Guarantees", "ERC-8004", "On-Chain Coordination"],
     color: "gold"
   },
   {
-    title: "Healthcare AI",
-    description: "Monarch AI platform and sickle cell research",
+    title: "Longitudinal Intelligence",
+    description: "Red Cell Systems, healthcare memory, and patient-owned AI systems",
     icon: <FaHeartPulse className="w-7 h-7" />,
     href: "/research/healthcare",
-    highlights: ["Monarch AI", "Sickle Cell Analysis", "Medical Imaging", "Predictive Diagnostics"],
+    highlights: ["Red Cell Systems", "Healthcare Intelligence", "Biomarker Analytics", "Disease-Focused AI"],
     color: "emerald"
   }
 ];
@@ -55,7 +55,7 @@ export default function ResearchPage() {
     <PageLayout
       eyebrow="Explore"
       title="Research"
-      description="Exploring the intersection of AI, blockchain, and healthcare through foundational research"
+      description="Building the primitives for autonomous agents — from inference and memory to settlement and healthcare intelligence"
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {researchAreas.map((area, index) => {
@@ -111,13 +111,13 @@ export default function ResearchPage() {
         <h3 className="text-display-sm md:text-display-md font-lora mb-6">Our Approach</h3>
         <div className="max-w-3xl space-y-4">
           <p className="text-muted-foreground text-body leading-relaxed">
-            At the Financial Reishi Research Institute, we focus on foundational research that bridges
-            theoretical advances with practical applications. Our work spans three critical domains where
-            emerging technologies can create transformative impact.
+            Quincy Labs is an AI infrastructure lab building agent-native systems across compute, 
+            memory, inference, and decentralized coordination. Our research spans three interconnected 
+            domains that form a single thesis: autonomous agents need purpose-built infrastructure.
           </p>
           <p className="text-muted-foreground text-body leading-relaxed">
-            We believe in open research, collaborative development, and building infrastructure that
-            enables the next generation of decentralized and intelligent systems.
+            We build open research, production-grade systems, and the primitives that enable 
+            the next generation of autonomous, intelligent infrastructure.
           </p>
         </div>
       </section>

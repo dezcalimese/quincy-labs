@@ -55,17 +55,17 @@ const navItems: NavItem[] = [
         icon: <FiLayers className="w-3.5 h-3.5" />
       },
       {
-        label: "Generative AI",
+        label: "Agent Infrastructure",
         href: "/research/generative-ai",
         icon: <FaRobot className="w-3.5 h-3.5" />
       },
       {
-        label: "Blockchain",
+        label: "Agent Settlement",
         href: "/research/blockchain",
         icon: <FaMicrochip className="w-3.5 h-3.5" />
       },
       {
-        label: "Healthcare",
+        label: "Longitudinal Intelligence",
         href: "/research/healthcare",
         icon: <FaHeartPulse className="w-3.5 h-3.5" />
       }
@@ -86,8 +86,8 @@ const navItems: NavItem[] = [
         icon: <FaMicrochip className="w-3.5 h-3.5" />
       },
       {
-        label: "Monarch",
-        href: "/labs/monarch",
+        label: "Red Cell Systems",
+        href: "/labs/red-cell-systems",
         icon: <FaNotesMedical className="w-3.5 h-3.5" />
       },
       {
@@ -294,7 +294,7 @@ export default function Sidebar() {
                       Quincy Labs
                     </h2>
                     <p className="text-eyebrow mt-0.5">
-                      Research Institute
+                      AI Infrastructure Lab
                     </p>
                   </div>
                 </div>

@@ -5,8 +5,8 @@ import { FaMicrochip, FaNotesMedical, FaCode, FaRocket } from "react-icons/fa6";
 const labsProjects = [
   {
     title: "Monmouth",
-    subtitle: "Agent-Native Settlement Chain",
-    description: "Settlement blockchain for autonomous AI agents built on Commonware consensus and REVM execution",
+    subtitle: "Agent Settlement Infrastructure",
+    description: "Settlement infrastructure for autonomous AI agents — identity, coordination, payments, verification, and execution guarantees",
     icon: <FaMicrochip className="w-8 h-8" />,
     href: "/labs/monmouth",
     status: "In Development",
@@ -14,14 +14,14 @@ const labsProjects = [
     features: ["BFT Consensus", "ERC-8004", "Agent Classifier", "Custom Precompiles"]
   },
   {
-    title: "Monarch",
-    subtitle: "Healthcare Intelligence",
-    description: "Comprehensive AI platform for clinical decision support and patient care",
+    title: "Red Cell Systems",
+    subtitle: "Healthcare Intelligence Platform",
+    description: "AI-powered healthcare intelligence that unifies patient data, biomedical knowledge, and clinical insights",
     icon: <FaNotesMedical className="w-8 h-8" />,
-    href: "/labs/monarch",
+    href: "/labs/red-cell-systems",
     status: "In Development",
     statusColor: "text-blue-500",
-    features: ["Clinical AI", "Risk Prediction", "HIPAA Compliant", "Real-time Analysis"]
+    features: ["Patient Intelligence", "Clinical Analytics", "Research Discovery", "Population Health"]
   },
   /*
   {
@@ -41,15 +41,15 @@ export default function LabsPage() {
   return (
     <PageLayout
       title="Labs"
-      description="Building the future through experimental projects and cutting-edge technology"
+      description="Production-grade systems for agent infrastructure, settlement, and healthcare intelligence"
     >
       <div className="space-y-12">
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-gray-600 dark:text-gray-400">
-            Quincy Labs is where our research meets reality. We build production-grade systems that 
-            demonstrate the practical applications of our theoretical work, creating tools and platforms 
-            that push the boundaries of what's possible.
+            Quincy Labs builds production-grade infrastructure for autonomous agents. Each project 
+            represents a core layer of our thesis — from blockchain settlement and compute routing 
+            to healthcare intelligence — designed to work together as coherent agent-native systems.
           </p>
         </section>
 

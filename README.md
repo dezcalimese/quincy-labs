@@ -1,3 +1,3 @@
 ## Quincy Labs
 
-Financial Reishi Research Institute
+AI Infrastructure Lab for Autonomous Agents

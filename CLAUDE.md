@@ -4,14 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- **Start development server**: `npm run dev` (Next.js development server)
-- **Build for production**: `npm run build` (Next.js production build)
-- **Start production server**: `npm start` (Next.js production server)
-- **Lint code**: `npm run lint` (ESLint with Next.js config)
+- **Start development server**: `bun dev` (Next.js development server)
+- **Build for production**: `bun run build` (Next.js production build)
+- **Start production server**: `bun start` (Next.js production server)
+- **Lint code**: `bun lint` (ESLint with Next.js config)
+- **Install dependencies**: `bun install`
+
+> Note: This project uses Bun as the package manager instead of npm.
 
 ## Architecture Overview
 
-This is a Next.js 15 application for Quincy Labs (Financial Reishi Research Institute) with the following key architectural components:
+This is a Next.js 15 application for Quincy Labs (AI Infrastructure Lab) with the following key architectural components:
 
 ### Tech Stack
 - **Framework**: Next.js 15 with App Router

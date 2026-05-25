@@ -6,15 +6,15 @@ export default function AboutPage() {
   return (
     <PageLayout
       title="About Us"
-      description="Building the future at the intersection of AI and blockchain"
+      description="AI infrastructure lab building the primitives for autonomous agents"
     >
       <div className="space-y-12">
         {/* Mission Statement */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            The Financial Reishi Research Institute is dedicated to advancing the frontiers of 
-            artificial intelligence and blockchain technology. We believe in building infrastructure 
-            that enables a more intelligent, decentralized, and equitable future.
+            Quincy Labs is an AI infrastructure lab building agent-native systems across compute, 
+            memory, inference, and decentralized coordination. We design and deploy the primitives 
+            that autonomous agents need to operate at scale.
           </p>
         </section>
 
@@ -259,7 +259,7 @@ export default function AboutPage() {
                 Our Philosophy →
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Learn about Financial Reishi and our approach to innovation
+                Our approach to building AI infrastructure
               </p>
             </Link>
             <Link

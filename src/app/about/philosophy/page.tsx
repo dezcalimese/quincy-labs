@@ -7,36 +7,32 @@ export default function PhilosophyPage() {
       description="The principles and beliefs that guide our work"
     >
       <div className="space-y-12">
-        {/* Financial Reishi */}
+        {/* Agent Infrastructure Philosophy */}
         <section>
-          <h2 className="text-2xl font-lora mb-6">Financial Reishi Philosophy</h2>
+          <h2 className="text-2xl font-lora mb-6">Agent Infrastructure Philosophy</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Just as Reishi (霊子, Spirit Particles) forms the fundamental building blocks of all spiritual 
-              matter in existence—composing souls, spiritual bodies, and entire spiritual realms—we view 
-              Financial Reishi as the elemental particles that constitute all financial systems and economic 
-              interactions.
+              We believe autonomous agents represent a fundamental shift in how software operates — from 
+              tools that wait for human input to systems that reason, coordinate, and act independently. 
+              This shift demands purpose-built infrastructure, not retrofitted cloud services.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              Financial Reishi represents the underlying data, transactions, and value flows that exist 
-              everywhere in our economic reality, yet remain invisible and intangible to most. Like spiritual 
-              energy that can only be perceived and manipulated by those with heightened awareness, Financial 
-              Reishi requires sophisticated systems and trained practitioners to collect, concentrate, and 
-              reshape these fundamental economic particles.
+              Agent-native infrastructure means designing every layer — memory, inference, settlement, 
+              coordination — around the assumption that the primary user is an autonomous system, not a 
+              human clicking buttons. The primitives look different: persistent memory instead of session 
+              state, execution guarantees instead of best-effort delivery, on-chain identity instead of 
+              OAuth tokens.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              The Financial Reishi philosophy embodies the mastery of these elemental financial forces—gathering 
-              scattered value particles from across markets, converting raw economic matter into powerful 
-              financial constructs, and building platforms that allow users to stand upon and navigate the 
-              invisible currents of global finance. Through this approach, we create financial systems that 
-              transcend traditional limitations, constructing new economic realities from the very building 
-              blocks of value itself.
+              This philosophy drives everything we build at Quincy Labs. Monmouth exists because agents 
+              need settlement infrastructure with identity, coordination, and execution guarantees. 
+              Red Cell Systems exists because healthcare intelligence requires longitudinal memory and 
+              reasoning that no general-purpose AI can provide. Sandstorm exists because agent workloads 
+              need intelligent routing across heterogeneous compute substrates.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Just as Quincy masters can manifest platforms of pure Reishi to walk on air, Financial Reishi 
-              enables the creation of financial infrastructure that operates beyond conventional constraints, 
-              turning the invisible forces of economics into tangible, manipulable tools for users to achieve 
-              what was previously impossible.
+              We don't build applications — we build the infrastructure layer that makes agent-native 
+              applications possible.
             </p>
           </div>
         </section>

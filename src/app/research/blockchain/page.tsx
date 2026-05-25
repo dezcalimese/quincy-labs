@@ -51,16 +51,16 @@ const researchTopics = [
 export default function BlockchainPage() {
   return (
     <PageLayout
-      title="Blockchain Research"
-      description="Building the infrastructure for decentralized intelligence"
+      title="Agent Settlement Research"
+      description="Blockchain coordination, execution guarantees, and settlement infrastructure for autonomous agents"
     >
       <div className="space-y-12">
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-gray-600 dark:text-gray-400">
-            Our blockchain research focuses on creating foundational infrastructure for agent-native
-            chains, advanced DeFi protocols, and autonomous AI systems that can transact safely
-            across blockchain ecosystems.
+            Our settlement research focuses on building the coordination and execution layer for 
+            autonomous agents — from agent-native blockchains and on-chain identity to cross-chain 
+            operations and execution guarantees.
           </p>
         </section>
 
@@ -103,12 +103,11 @@ export default function BlockchainPage() {
           <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-3">Agent-Native Settlement Chain</h3>
+                <h3 className="text-xl font-bold mb-3">Settlement Infrastructure for Autonomous Agents</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Monmouth is a settlement blockchain designed for autonomous AI agents to transact
-                  safely across blockchain ecosystems. Built on Commonware with BFT Simplex consensus
-                  and REVM v34 execution, it provides native infrastructure for agent identity,
-                  reputation, and cross-chain operations.
+                  Monmouth is settlement infrastructure for autonomous AI agents — enabling identity, 
+                  coordination, payments, verification, and execution guarantees across blockchain 
+                  ecosystems. Built on Commonware with BFT Simplex consensus and REVM v34 execution.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">

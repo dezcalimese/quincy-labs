@@ -3,14 +3,14 @@ import { FaHeartPulse, FaDna, FaBrain, FaChartLine } from "react-icons/fa6";
 
 const researchTopics = [
   {
-    title: "Monarch AI Platform",
+    title: "Red Cell Intelligence Engine",
     icon: <FaBrain className="w-6 h-6" />,
-    description: "Comprehensive AI platform for healthcare diagnostics and treatment planning",
+    description: "Unified platform combining biomedical knowledge graphs, patient data, and AI reasoning systems",
     areas: [
-      "Clinical decision support",
-      "Patient risk stratification",
-      "Treatment optimization",
-      "Outcome prediction models"
+      "Biomedical knowledge graphs",
+      "Longitudinal patient analytics",
+      "AI reasoning and insights",
+      "Predictive health models"
     ]
   },
   {
@@ -51,17 +51,17 @@ const researchTopics = [
 export default function HealthcarePage() {
   return (
     <PageLayout
-      title="Healthcare AI Research"
-      description="Transforming healthcare through intelligent systems and data-driven insights"
+      title="Longitudinal Intelligence Research"
+      description="Healthcare memory, patient-owned AI systems, and disease-focused intelligence"
     >
       <div className="space-y-12">
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-gray-600 dark:text-gray-400">
-            Our healthcare research combines cutting-edge AI with clinical expertise to develop 
-            solutions that improve patient outcomes, reduce healthcare costs, and advance medical 
-            understanding. We focus on creating accessible, interpretable AI systems that augment 
-            healthcare providers' capabilities.
+            Our longitudinal intelligence research builds the AI systems that transform fragmented 
+            healthcare data into actionable understanding. Beginning with sickle cell disease, we 
+            develop disease-focused intelligence platforms that unify patient data, biomedical 
+            knowledge, and clinical insights to improve outcomes and accelerate discovery.
           </p>
         </section>
 
@@ -98,17 +98,17 @@ export default function HealthcarePage() {
           </div>
         </section>
 
-        {/* Monarch AI Showcase */}
+        {/* Red Cell Systems Showcase */}
         <section>
-          <h2 className="text-2xl font-lora mb-6">Monarch AI: Healthcare Intelligence Platform</h2>
+          <h2 className="text-2xl font-lora mb-6">Red Cell Systems: Healthcare Intelligence Platform</h2>
           <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 rounded-xl p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-3">Comprehensive Care Intelligence</h3>
+                <h3 className="text-xl font-bold mb-3">Unified Healthcare Intelligence</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Monarch AI integrates multiple data streams to provide holistic patient insights, 
-                  from electronic health records to genomic data, creating a complete picture for 
-                  personalized care delivery.
+                  Red Cell Systems serves as the intelligence layer that unifies healthcare data across 
+                  EHRs, lab results, clinical notes, wearable devices, and medical literature — providing 
+                  personalized insights and longitudinal health analysis.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">

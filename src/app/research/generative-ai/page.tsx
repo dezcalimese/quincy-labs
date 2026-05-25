@@ -51,16 +51,16 @@ const researchTopics = [
 export default function GenerativeAIPage() {
   return (
     <PageLayout
-      title="Generative AI Research"
-      description="Advancing the frontier of language models and intelligent systems"
+      title="Agent Infrastructure Research"
+      description="Memory, RAG, inference, and runtime systems for autonomous agents"
     >
       <div className="space-y-12">
         {/* Introduction */}
         <section className="prose prose-lg dark:prose-invert max-w-none">
           <p className="text-gray-600 dark:text-gray-400">
-            Our Generative AI research focuses on pushing the boundaries of what's possible with 
-            large language models, from enhancing their memory capabilities to building sophisticated 
-            agent systems that can autonomously solve complex problems.
+            Our agent infrastructure research focuses on building the core primitives autonomous agents 
+            need to operate — from persistent memory and retrieval systems to optimized inference 
+            pipelines and multi-agent coordination runtimes.
           </p>
         </section>
 
