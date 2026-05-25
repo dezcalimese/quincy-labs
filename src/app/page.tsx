@@ -122,7 +122,7 @@ export default function Home() {
                   <FaArrowRight className="w-3 h-3 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-base" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-2 leading-snug">
-                  Monmouth, Red Cell Systems, Sandstorm
+                  Red Cell Systems, Monmouth, Sandstorm
                 </p>
               </Link>
 

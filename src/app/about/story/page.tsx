@@ -107,8 +107,8 @@ export default function StoryPage() {
               <div className="flex-grow pl-6 -mt-2">
                 <h3 className="text-lg font-semibold mb-2">Building the Future</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Today, we're actively developing Monmouth, advancing Red Cell Systems as a 
-                  healthcare intelligence platform, and releasing open-source tools that empower 
+                  Today, we're advancing Red Cell Systems as a healthcare intelligence platform, 
+                  actively developing Monmouth, and releasing open-source tools that empower 
                   developers worldwide. Our research spans agent infrastructure, settlement systems, 
                   and longitudinal intelligence — all unified by the thesis that autonomous agents 
                   need purpose-built infrastructure.

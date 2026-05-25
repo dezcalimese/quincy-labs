@@ -81,14 +81,14 @@ const navItems: NavItem[] = [
         icon: <FiLayers className="w-3.5 h-3.5" />
       },
       {
-        label: "Monmouth",
-        href: "/labs/monmouth",
-        icon: <FaMicrochip className="w-3.5 h-3.5" />
-      },
-      {
         label: "Red Cell Systems",
         href: "/labs/red-cell-systems",
         icon: <FaNotesMedical className="w-3.5 h-3.5" />
+      },
+      {
+        label: "Monmouth",
+        href: "/labs/monmouth",
+        icon: <FaMicrochip className="w-3.5 h-3.5" />
       },
       {
         label: "Sandstorm",

@@ -4,16 +4,6 @@ import { FaMicrochip, FaNotesMedical, FaCode, FaRocket } from "react-icons/fa6";
 
 const labsProjects = [
   {
-    title: "Monmouth",
-    subtitle: "Agent Settlement Infrastructure",
-    description: "Settlement infrastructure for autonomous AI agents — identity, coordination, payments, verification, and execution guarantees",
-    icon: <FaMicrochip className="w-8 h-8" />,
-    href: "/labs/monmouth",
-    status: "In Development",
-    statusColor: "text-yellow-500",
-    features: ["BFT Consensus", "ERC-8004", "Agent Classifier", "Custom Precompiles"]
-  },
-  {
     title: "Red Cell Systems",
     subtitle: "Healthcare Intelligence Platform",
     description: "AI-powered healthcare intelligence that unifies patient data, biomedical knowledge, and clinical insights",
@@ -22,6 +12,16 @@ const labsProjects = [
     status: "In Development",
     statusColor: "text-blue-500",
     features: ["Patient Intelligence", "Clinical Analytics", "Research Discovery", "Population Health"]
+  },
+  {
+    title: "Monmouth",
+    subtitle: "Agent Settlement Infrastructure",
+    description: "Settlement infrastructure for autonomous AI agents — identity, coordination, payments, verification, and execution guarantees",
+    icon: <FaMicrochip className="w-8 h-8" />,
+    href: "/labs/monmouth",
+    status: "In Development",
+    statusColor: "text-yellow-500",
+    features: ["BFT Consensus", "ERC-8004", "Agent Classifier", "Custom Precompiles"]
   },
   /*
   {
