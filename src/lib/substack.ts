@@ -10,6 +10,7 @@ const SUBSTACK_FEEDS: SubstackFeed[] = [
   { url: 'https://0xlordgrace.substack.com/feed', author: 'Quincy Labs' },
   { url: 'https://quincylabs.substack.com/feed', author: 'Henry' },
   { url: 'https://diaraylouden.substack.com/feed', author: 'Diamond' },
+  { url: 'https://hwaryunai.substack.com/feed', author: 'Hwaryun AI' },
 ]
 
 export interface SubstackPost {
