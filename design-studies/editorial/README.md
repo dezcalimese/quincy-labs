@@ -12,18 +12,21 @@ Use `npm run build` to build and `npx tsc --noEmit` to check types.
 
 ## Integration status
 
-This is a standalone Vinext/Sites app. The repository's production Next.js app
-in `src/` has not been replaced. The root TypeScript project excludes this
-folder so the two apps use their own dependencies and path aliases.
+This folder remains the standalone Vinext/Sites reference app. Its editorial
+design is now integrated into the production Next.js app in `src/` on this
+branch. The root TypeScript project excludes this reference folder so the two
+apps use their own dependencies and path aliases.
 
 The review includes the editorial page layouts, Quincy colours, Reishi effect,
 footer logo, and native browser links. Article content is an imported snapshot;
 the contact form prepares an email draft. The review site is not indexed.
 
-Before merging the design into production, port the layouts into `src/`, retain
-the existing Sanity and Substack data integrations and existing routes, confirm
-contact delivery, and review production metadata. Do not replace the production
-deployment configuration with the Sites manifest in this folder.
+The Next.js integration retains live Sanity and Substack content and the existing
+routes. Known Substack articles retain the approved categories through
+`src/lib/article-categories.json`; newly discovered articles appear under Substack
+until categorized. The contact form prepares an email draft; it does not deliver
+mail on the server. Production keeps its existing indexing behavior and article
+metadata. The Sites manifest here belongs only to the reference app.
 
 The imported source passed its TypeScript and production build checks. Header
 links and an article click were also checked on the published review site.

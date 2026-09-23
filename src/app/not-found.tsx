@@ -1,0 +1,1 @@
+export default function NotFound(){return <main id="main-content" className="page-intro section-pad"><span className="eyebrow">404 / PAGE NOT FOUND</span><div className="intro-grid"><h1>A different<br/><em>direction.</em></h1><div><p>This page is not in the lab’s current collection.</p><a className="primary-link" href="/">Return to Quincy Labs ↗</a></div></div></main>}
