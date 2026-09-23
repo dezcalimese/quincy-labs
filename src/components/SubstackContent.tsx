@@ -1,5 +1,3 @@
-'use client'
-
 export default function SubstackContent({ html }: { html: string }) {
   return (
     <div

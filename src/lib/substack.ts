@@ -1,4 +1,5 @@
 import Parser from 'rss-parser'
+import {parseFragment, serialize, type DefaultTreeAdapterMap} from 'parse5'
 
 interface SubstackFeed {
   url: string
@@ -39,21 +40,27 @@ function decodeHtmlEntities(text: string): string {
     .replace(/&apos;/g, "'")
 }
 
-function stripSubscribeWidget(html: string): string {
-  // Remove Substack's "Thanks for reading" + subscribe form blocks
-  // These appear as <p> tags with subscribe CTAs followed by form elements
-  return html
-    // Remove subscribe form/widget divs
-    .replace(/<div[^>]*class="[^"]*subscription-widget[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '')
-    // Remove "Thanks for reading" paragraphs that lead into subscribe CTAs
-    .replace(/<p[^>]*>Thanks for reading[^<]*Subscribe[^<]*<\/p>/gi, '')
-    .replace(/<p[^>]*>Thanks for reading[^<]*!?\s*Subscribe[^<]*<\/p>/gi, '')
-    // Remove standalone subscribe input/button combos
-    .replace(/<div[^>]*>[\s\S]*?<input[^>]*placeholder="[^"]*email[^"]*"[^>]*>[\s\S]*?<button[^>]*>Subscribe<\/button>[\s\S]*?<\/div>/gi, '')
-    // Remove any remaining subscribe buttons with surrounding form elements
-    .replace(/<form[^>]*>[\s\S]*?Subscribe[\s\S]*?<\/form>/gi, '')
-    // Clean up empty paragraphs left behind
-    .replace(/<p[^>]*>\s*<\/p>/g, '')
+export function stripSubscribeWidget(html: string): string {
+  // Parse nested feed markup before removing widgets; regex can truncate a
+  // parent div and leave invalid HTML around the article.
+  const fragment = parseFragment(html);
+  function clean(parent: DefaultTreeAdapterMap['parentNode']) {
+    parent.childNodes = parent.childNodes.filter(node => {
+      if (!('tagName' in node)) return true;
+      const classes = node.attrs.find(attr => attr.name === 'class')?.value || '';
+      return !['script', 'style', 'form', 'input', 'button', 'iframe', 'object', 'embed'].includes(node.tagName)
+        && !classes.split(/\\s+/).some(name => name.includes('subscription-widget'));
+    });
+    for (const node of parent.childNodes) {
+      if ('tagName' in node) {
+        node.attrs = node.attrs.filter(attr => !attr.name.startsWith('on') && attr.name !== 'srcdoc'
+          && !(['href', 'src', 'action', 'xlink:href'].includes(attr.name) && /^[\\s\\u0000-\\u0020]*(javascript|vbscript|data):/i.test(attr.value)));
+        clean(node);
+      }
+    }
+  }
+  clean(fragment);
+  return serialize(fragment);
 }
 
 function estimateReadTime(html: string): number {
