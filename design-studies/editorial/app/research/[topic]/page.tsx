@@ -1,0 +1,7 @@
+import type {Metadata} from 'next';
+import {notFound} from 'next/navigation';
+import {PageIntro,ArticleBlocks} from '../../editorial';
+import pages from '../../data/pages.json';
+const map:Record<string,keyof typeof pages>={'generative-ai':'research--generative-ai',blockchain:'research--blockchain',healthcare:'research--healthcare'};
+export async function generateMetadata({params}:{params:Promise<{topic:string}>}):Promise<Metadata>{const page=pages[map[(await params).topic]];return {title:`${page?.title||'Research'} — Quincy Labs`}}
+export default async function Topic({params}:{params:Promise<{topic:string}>}){const {topic}=await params;const page=pages[map[topic]];if(!page)notFound();const blocks=page.blocks.filter((b,i)=>i!==0&&!(b.tag==='h3'&&['Technical Specifications','Impact Metrics'].includes(b.text)));return <main id="main-content"><PageIntro label="Research" title={page.title.replace(' Research','')} accent="Research." description={page.blocks[0]?.text||''}/><div className="document-layout section-pad"><aside className="document-nav"><a href="/research">← Research overview</a><span className="eyebrow">RELATED WORK</span><a href={topic==='healthcare'?'/labs/red-cell-systems':topic==='blockchain'?'/labs/monmouth':'/labs'}>{topic==='healthcare'?'Red Cell Systems':topic==='blockchain'?'Monmouth':'Explore the labs'} ↗</a><a href="/insights/research-notes">Research notes ↗</a></aside><div className="document-surface"><ArticleBlocks blocks={blocks}/><a className="text-link" href="/contact">Discuss a research collaboration ↗</a></div></div></main>}
