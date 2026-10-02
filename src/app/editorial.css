@@ -1,7 +1,7 @@
 .concept .home-thesis { grid-template-columns: 1fr; }
-.home-thesis > div { width: 100%; max-width: 850px; justify-self: end; }
-.concept .home-work-heading { grid-template-columns: 1fr auto; }
-@media (max-width: 700px) { .concept .home-work-heading { grid-template-columns: 1fr; } }
+.home-thesis > div { max-width: 850px; }
+.concept .home-work-heading { grid-template-columns: auto auto; justify-content: end; column-gap: clamp(40px, 6vw, 90px); }
+@media (max-width: 700px) { .concept .home-work-heading { grid-template-columns: 1fr; justify-content: stretch; } }
 .hero .hero-grid { margin-top: 12px; }
 .hero .hero-bottom { justify-content: flex-end; }
 /* Keep navigation usable on tablets and when text is enlarged. */
