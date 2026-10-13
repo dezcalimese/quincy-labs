@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shader Playground - Quincy Labs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0f;
+      color: #e8e8e8;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .subtitle { color: #888; margin-bottom: 2rem; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .control-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .control-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #666;
+    }
+    .buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #333;
+      background: #1a1a1f;
+      color: #e8e8e8;
+      font-family: inherit;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover { border-color: #0dd; }
+    button.active { background: #0aa; color: #000; border-color: #0dd; }
+    .canvas-container {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 4/3;
+      background: #111;
+      border: 1px solid #333;
+      margin-bottom: 1rem;
+    }
+    canvas { width: 100%; height: 100%; display: block; }
+    .description {
+      padding: 1rem;
+      background: #1a1a1f;
+      border: 1px solid #333;
+      max-width: 800px;
+    }
+    .description strong { display: block; margin-bottom: 0.25rem; }
+    .description p { color: #888; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <h1>Shader Playground</h1>
+  <p class="subtitle">Move your mouse over the canvas to interact</p>
+
+  <div class="controls">
+    <div class="control-group">
+      <span class="control-label">Logo</span>
+      <div class="buttons" id="logo-buttons">
+        <button class="active" data-logo="monmouth">Monmouth</button>
+        <button data-logo="rcs">RCS</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <span class="control-label">Effect</span>
+      <div class="buttons" id="effect-buttons">
+        <button data-effect="none">Original</button>
+        <button class="active" data-effect="displacement">Displacement</button>
+        <button data-effect="holographic">Holographic</button>
+        <button data-effect="pulse">Pulse</button>
+        <button data-effect="glitch">Glitch</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="description">
+    <strong id="effect-name">Displacement</strong>
+    <p id="effect-desc">Underwater wave distortion with mouse ripples</p>
+  </div>
+
+  <script type="module">
+    const canvas = document.getElementById('canvas');
+    const gl = canvas.getContext('webgl');
+
+    const descriptions = {
+      none: { name: 'Original', desc: 'No effect applied' },
+      displacement: { name: 'Displacement', desc: 'Underwater wave distortion with mouse ripples' },
+      holographic: { name: 'Holographic', desc: 'Rainbow iridescence that shifts with movement' },
+      pulse: { name: 'Pulse', desc: 'Breathing scale with cyan edge glow' },
+      glitch: { name: 'Glitch', desc: 'Chromatic aberration with periodic slice displacement' },
+    };
+
+    const images = {
+      monmouth: '/img/monmouth-jellyfish.png',
+      rcs: '/img/red-cell-systems.png',
+    };
+
+    let currentLogo = 'monmouth';
+    let currentEffect = 'displacement';
+    let mouse = { x: 0.5, y: 0.5 };
+    let texture = null;
+    let program = null;
+
+    const vertexShader = `
+      attribute vec2 a_position;
+      attribute vec2 a_texCoord;
+      varying vec2 v_texCoord;
+      void main() {
+        gl_Position = vec4(a_position, 0.0, 1.0);
+        v_texCoord = a_texCoord;
+      }
+    `;
+
+    const fragmentShaders = {
+      none: `
+        precision mediump float;
+        uniform sampler2D u_texture;
+        varying vec2 v_texCoord;
+        void main() {
+          gl_FragColor = texture2D(u_texture, v_texCoord);
+        }
+      `,
+      displacement: `
+        precision mediump float;
+        uniform sampler2D u_texture;
+        uniform float u_time;
+        uniform vec2 u_mouse;
+        varying vec2 v_texCoord;
+        void main() {
+          vec2 uv = v_texCoord;
+          float wave = sin(uv.y * 10.0 + u_time * 2.0) * 0.015;
+          float wave2 = sin(uv.x * 8.0 + u_time * 1.5) * 0.012;
+          uv.x += wave;
+          uv.y += wave2;
+          float dist = distance(uv, u_mouse);
+          float ripple = sin(dist * 20.0 - u_time * 4.0) * 0.025 * smoothstep(0.4, 0.0, dist);
+          uv += ripple;
+          gl_FragColor = texture2D(u_texture, uv);
+        }
+      `,
+      holographic: `
+        precision mediump float;
+        uniform sampler2D u_texture;
+        uniform float u_time;
+        uniform vec2 u_mouse;
+        varying vec2 v_texCoord;
+        void main() {
+          vec4 tex = texture2D(u_texture, v_texCoord);
+          if (tex.a < 0.1) { gl_FragColor = tex; return; }
+          float hue = v_texCoord.x * 0.3 + v_texCoord.y * 0.3 + u_time * 0.5 + u_mouse.x * 0.5;
+          vec3 rainbow = vec3(
+            sin(hue) * 0.5 + 0.5,
+            sin(hue + 2.094) * 0.5 + 0.5,
+            sin(hue + 4.188) * 0.5 + 0.5
+          );
+          float lum = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
+          vec3 holo = mix(tex.rgb, rainbow, 0.5 * lum);
+          float shimmer = sin(v_texCoord.x * 50.0 + u_time * 3.0) * 0.1 + 0.9;
+          holo *= shimmer;
+          gl_FragColor = vec4(holo, tex.a);
+        }
+      `,
+      pulse: `
+        precision mediump float;
+        uniform sampler2D u_texture;
+        uniform float u_time;
+        varying vec2 v_texCoord;
+        void main() {
+          float breath = sin(u_time * 2.0) * 0.04;
+          vec2 center = vec2(0.5);
+          vec2 uv = center + (v_texCoord - center) * (1.0 + breath);
+          vec4 tex = texture2D(u_texture, uv);
+          float pulse = sin(u_time * 3.0) * 0.5 + 0.5;
+          vec3 glow = vec3(0.2, 0.9, 0.9) * pulse * 0.4;
+          tex.rgb += glow * tex.a;
+          gl_FragColor = tex;
+        }
+      `,
+      glitch: `
+        precision mediump float;
+        uniform sampler2D u_texture;
+        uniform float u_time;
+        varying vec2 v_texCoord;
+        float random(vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+        }
+        void main() {
+          vec2 uv = v_texCoord;
+          float glitchStrength = step(0.95, sin(u_time * 2.0)) * step(0.5, random(vec2(floor(u_time * 10.0))));
+          float slice = floor(v_texCoord.y * 20.0);
+          float offset = (random(vec2(slice, floor(u_time * 5.0))) - 0.5) * 0.1 * glitchStrength;
+          uv.x += offset;
+          float aberration = 0.008 + glitchStrength * 0.015;
+          vec4 r = texture2D(u_texture, uv + vec2(aberration, 0.0));
+          vec4 g = texture2D(u_texture, uv);
+          vec4 b = texture2D(u_texture, uv - vec2(aberration, 0.0));
+          float scanline = sin(v_texCoord.y * 400.0) * 0.04;
+          vec4 color = vec4(r.r, g.g, b.b, max(max(r.a, g.a), b.a));
+          color.rgb -= scanline;
+          gl_FragColor = color;
+        }
+      `,
+    };
+
+    function createShader(type, source) {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error(gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+      }
+      return shader;
+    }
+
+    function createProgram(effect) {
+      const vs = createShader(gl.VERTEX_SHADER, vertexShader);
+      const fs = createShader(gl.FRAGMENT_SHADER, fragmentShaders[effect]);
+      const prog = gl.createProgram();
+      gl.attachShader(prog, vs);
+      gl.attachShader(prog, fs);
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+        console.error(gl.getProgramInfoLog(prog));
+        return null;
+      }
+      return prog;
+    }
+
+    function loadTexture(url) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          const tex = gl.createTexture();
+          gl.bindTexture(gl.TEXTURE_2D, tex);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+          resolve(tex);
+        };
+        img.src = url;
+      });
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+
+    function setupGeometry() {
+      const positions = new Float32Array([-1,-1, 1,-1, -1,1, 1,1]);
+      const texCoords = new Float32Array([0,1, 1,1, 0,0, 1,0]);
+
+      const posBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+      const texBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, texBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, texCoords, gl.STATIC_DRAW);
+
+      return { posBuffer, texBuffer };
+    }
+
+    const buffers = setupGeometry();
+    let startTime = Date.now();
+
+    function render() {
+      if (!program || !texture) {
+        requestAnimationFrame(render);
+        return;
+      }
+
+      gl.clearColor(0.04, 0.04, 0.06, 1);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+      gl.useProgram(program);
+
+      const posLoc = gl.getAttribLocation(program, 'a_position');
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffers.posBuffer);
+      gl.enableVertexAttribArray(posLoc);
+      gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+      const texLoc = gl.getAttribLocation(program, 'a_texCoord');
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffers.texBuffer);
+      gl.enableVertexAttribArray(texLoc);
+      gl.vertexAttribPointer(texLoc, 2, gl.FLOAT, false, 0, 0);
+
+      gl.activeTexture(gl.TEXTURE0);
+      gl.bindTexture(gl.TEXTURE_2D, texture);
+      gl.uniform1i(gl.getUniformLocation(program, 'u_texture'), 0);
+
+      const time = (Date.now() - startTime) / 1000;
+      gl.uniform1f(gl.getUniformLocation(program, 'u_time'), time);
+      gl.uniform2f(gl.getUniformLocation(program, 'u_mouse'), mouse.x, mouse.y);
+
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(render);
+    }
+
+    async function updateScene() {
+      program = createProgram(currentEffect);
+      texture = await loadTexture(images[currentLogo]);
+      document.getElementById('effect-name').textContent = descriptions[currentEffect].name;
+      document.getElementById('effect-desc').textContent = descriptions[currentEffect].desc;
+    }
+
+    // Event listeners
+    document.querySelectorAll('#logo-buttons button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#logo-buttons button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLogo = btn.dataset.logo;
+        updateScene();
+      });
+    });
+
+    document.querySelectorAll('#effect-buttons button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#effect-buttons button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentEffect = btn.dataset.effect;
+        updateScene();
+      });
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = (e.clientX - rect.left) / rect.width;
+      mouse.y = 1 - (e.clientY - rect.top) / rect.height;
+    });
+
+    window.addEventListener('resize', resize);
+
+    // Init
+    resize();
+    updateScene();
+    render();
+  </script>
+</body>
+</html>
