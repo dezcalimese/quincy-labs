@@ -41,7 +41,7 @@ export default function SuiSecBench() {
           <Link href="/">Quincy Labs</Link><span>/ <Link href="/research">Research</Link> / Sui Sec Bench</span>
         </div>
         <nav className="ssb-subnav" aria-label="Sui Sec Bench sections">
-          <a href="#results">Results</a><a href="#patch">Patches</a><a href="#method">Method</a><a href={SUI_SEC_BENCH.repo}>GitHub ↗</a>
+          <a href="#results">Results</a><a href="#patch">Patches</a><a href="#method">Method</a><a href={SUI_SEC_BENCH.repo}>GitHub ↗</a><a href={SUI_SEC_BENCH.contributing}>Contributing a case ↗</a>
         </nav>
         <SectionLabel number="01">Pilot results · v1 · November 2026</SectionLabel>
         <h1 className="ssb-h1">Models find where the bug is.<br />So far, they <em>rarely fix it.</em></h1>
@@ -91,12 +91,14 @@ export default function SuiSecBench() {
                 <tr key={name}>
                   <td className="ssb-m">{short(name)}</td>
                   <td>
-                    <div className="ssb-stack" role="img" aria-label={summary}>
+                    <div className="ssb-stack">
                       {OUT.map((o, i) => counts[o.k] ? (
                         <div key={o.k} className="ssb-seg" title={`${o.label}: ${counts[o.k]}`}
+                          aria-label={`${o.label}: ${counts[o.k]}`} role="img"
                           style={{ width: `${(counts[o.k] / total) * 100}%`, background: o.color, animationDelay: `${i * 60}ms` }} />
                       ) : null)}
                     </div>
+                    <span className="ssb-sr">{summary}</span>
                   </td>
                 </tr>
               );
@@ -109,7 +111,7 @@ export default function SuiSecBench() {
       <section className="section-pad ssb-section">
         <SectionLabel number="04">Exploit iterations</SectionLabel>
         <h2>How many tries <em>to prove the bug.</em></h2>
-        <p className="ssb-note">Assisted agentic mode, up to 5 iterations. Filled squares are attempts used; a red square is the iteration where the test passed on the vulnerable package and failed on the fixed one.</p>
+        <p className="ssb-note">Assisted agentic mode, up to 5 iterations. Filled squares are attempts used; a teal square is the iteration where the test passed on the vulnerable package and failed on the fixed one.</p>
         <div className="ssb-scroll">
           <table className="ssb-table">
             <thead><tr><th className="ssb-model-col">Model</th>{CASES.map(id => <th key={id}>{id}</th>)}</tr></thead>
@@ -161,6 +163,7 @@ export default function SuiSecBench() {
         <div className="ssb-links">
           <a className="text-link" href={SUI_SEC_BENCH.repo}>Repo ↗</a>
           <a className="text-link" href={SUI_SEC_BENCH.report}>Full report ↗</a>
+          <a className="text-link" href={SUI_SEC_BENCH.contributing}>Contributing a case ↗</a>
           <a className="text-link" href={SOCIAL.x}>X ↗</a>
           <a className="text-link" href={SOCIAL.linkedin}>LinkedIn ↗</a>
         </div>
