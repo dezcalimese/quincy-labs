@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-export const alt = "Sui Sec Bench pilot results: Models find the bug. They can't fix it.";
+export const alt = "Sui Sec Bench pilot results: Models find where the bug is. So far, they rarely fix it.";
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -26,9 +26,9 @@ export default async function Image() {
           <span style={{ display: 'flex' }}><span style={{ color: accent, marginRight: 16 }}>01</span>SUI SEC BENCH · PILOT RESULTS</span>
           <span>QUINCY LABS</span>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'DM Serif Display', fontSize: 84, lineHeight: 1.04, letterSpacing: -3, marginTop: 40 }}>
-          <span>Models find the bug.</span>
-          <span style={{ display: 'flex' }}>They&nbsp;<span style={{ fontStyle: 'italic', color: accent }}>can&apos;t fix it.</span></span>
+        <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'DM Serif Display', fontSize: 76, lineHeight: 1.06, letterSpacing: -3, marginTop: 40 }}>
+          <span>Models find where the bug is.</span>
+          <span style={{ display: 'flex' }}>So far, they&nbsp;<span style={{ fontStyle: 'italic', color: accent }}>rarely fix it.</span></span>
         </div>
         <div style={{ display: 'flex', marginTop: 'auto', borderTop: `2px solid ${ink}` }}>
           {STATS.map((s, i) => (
