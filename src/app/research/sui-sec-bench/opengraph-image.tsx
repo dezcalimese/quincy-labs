@@ -8,7 +8,7 @@ export const contentType = 'image/png';
 
 // Site tokens from editorial.css and globals.css.
 const bg = 'hsl(40, 20%, 98%)', ink = 'hsl(20, 20%, 8%)', muted = 'hsl(20, 10%, 45%)', line = 'hsl(40, 15%, 88%)';
-const accent = 'hsl(185, 80%, 32%)', signal = 'hsl(0, 72%, 51%)';
+const accent = 'hsl(185, 80%, 32%)', signal = 'hsl(185, 70%, 48%)';
 
 const STATS = [
   { n: '34', d: '36', t: 'Named the right function', hi: false },
