@@ -44,7 +44,7 @@ export default function SuiSecBench() {
           <a href="#results">Results</a><a href="#patch">Patches</a><a href="#method">Method</a><a href={SUI_SEC_BENCH.repo}>GitHub ↗</a>
         </nav>
         <SectionLabel number="01">Pilot results · v1 · November 2026</SectionLabel>
-        <h1 className="ssb-h1">Models find the bug.<br />They <em>can&apos;t fix it.</em></h1>
+        <h1 className="ssb-h1">Models find where the bug is.<br />So far, they <em>rarely fix it.</em></h1>
         <p className="ssb-lede">Sui Sec Bench tests local language models on Sui Move security work: find the bug, patch it, and write a test that shows it. This is a three-case pilot with six models.</p>
         <div className="ssb-banner"><i aria-hidden="true" />Preliminary. Small samples. Not a ranking.</div>
         <div className="ssb-stats">
