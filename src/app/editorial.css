@@ -80,3 +80,7 @@
 @media (max-width: 700px) {
   .project-reverse .project-artwork { grid-column: 1; grid-row: auto; }
 }
+/* Home page announcement line. Remove the link in page.tsx when it is no longer new. */
+.hero .hero-bottom.hero-bottom-news{justify-content:space-between;flex-wrap:wrap;gap:12px 24px}
+.news-line{display:inline-flex;align-items:center;gap:10px}
+.news-tag{font:.6875rem var(--mono);letter-spacing:.07em;text-transform:uppercase;color:hsl(185 80% 32%);border:1px solid currentColor;padding:2px 8px;border-radius:999px}
