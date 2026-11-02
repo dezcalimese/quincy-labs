@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsSubstack } from "react-icons/bs";
+import { SOCIAL } from "@/lib/social";
 import { FiMenu } from "react-icons/fi";
 import { ModeToggle } from "@/components/ui/toggle-mode";
 import { useSidebar } from "./SidebarContext";
@@ -61,7 +62,7 @@ const Header: React.FC = () => {
           className="px-4 py-2 sm:px-5 sm:py-2.5 text-sm w-full sm:w-auto border-border/50 hover:border-cyan-500/50 hover:shadow-glow-sm transition-all duration-base ease-out-expo"
         >
           <Link
-            href="https://quincylabs.substack.com/"
+            href={SOCIAL.substack}
             target="_blank"
             className="flex items-center justify-center gap-2"
           >
@@ -76,7 +77,7 @@ const Header: React.FC = () => {
           className="px-4 py-2 sm:px-5 sm:py-2.5 text-sm w-full sm:w-auto border-border/50 hover:border-cyan-500/50 hover:shadow-glow-sm transition-all duration-base ease-out-expo"
         >
           <Link
-            href="https://x.com/Quincy_Labs"
+            href={SOCIAL.x}
             target="_blank"
             className="flex items-center justify-center gap-2"
           >
