@@ -1,0 +1,17 @@
+/* Solana Sec Bench page. Uses the Sui Sec Bench styles (.ssb) and adds only what is new here. */
+.sol-video{margin:28px 0 0;border:1px solid var(--line);background:var(--ssb-ink);aspect-ratio:16/9}
+.sol-video video{display:block;width:100%;height:100%;object-fit:cover}
+.sol-line{margin-top:18px;font-size:1rem;line-height:1.6;max-width:720px}
+.sol-line strong{font-weight:600}
+.sol-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.sol-pair>div{min-width:0}
+.sol-pair h3{font:400 1.6rem var(--serif);margin:24px 0 6px}
+.sol-pair h3 .ssb-id{margin-right:10px}
+.ssb-cell.sol-top .ssb-v{color:var(--ssb-accent);font-weight:600}
+.sol-num{font-family:var(--mono);font-size:.8125rem}
+.sol-num.sol-top{color:var(--ssb-accent);font-weight:600}
+.sol-replaced td{color:var(--ssb-muted)}
+.sol-total td{font-weight:600;border-top:1px solid var(--ssb-ink)}
+@media(max-width:760px){
+  .sol-pair{grid-template-columns:minmax(0,1fr);gap:10px}
+}
