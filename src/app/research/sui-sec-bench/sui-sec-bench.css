@@ -93,3 +93,10 @@
 .ssb .section-label>span:last-child{color:var(--ssb-muted)}
 .ssb .section-label>span:last-child::before{content:'/';margin:0 12px;color:var(--ssb-ink)}
 .ssb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Sec Bench series link, shared with the Solana page. */
+.ssb-series{display:flex;flex-direction:column;gap:12px;padding-top:36px;padding-bottom:36px;border-top:1px solid var(--line)}
+.ssb-series-label{font:500 .6875rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ssb-muted)}
+.ssb-series-link{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:baseline;border-top:1px solid var(--ssb-ink);padding-top:14px}
+.ssb-series-name{font:400 1.6rem var(--serif)}
+.ssb-series-line{font-size:.9375rem;color:var(--ssb-muted)}
+@media(max-width:760px){.ssb-series-link{grid-template-columns:1fr auto}.ssb-series-line{grid-column:1/-1;grid-row:2}}

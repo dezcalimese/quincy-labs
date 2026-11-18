@@ -5,6 +5,7 @@ import { SUI_SEC_BENCH } from '@/lib/sui-sec-bench';
 import { SOCIAL } from '@/lib/social';
 import { DATA, CASES, frac, sum, short } from './data';
 import ModelTable from './model-table';
+import { AlsoInSeries } from '../_sec-bench-series';
 import './sui-sec-bench.css';
 
 const description = 'A preliminary pilot that tests local LLMs on Sui Move security tasks: detect, patch, and exploit.';
@@ -157,6 +158,8 @@ export default function SuiSecBench() {
           <li>The public repo has grades and cases, not model outputs or exploit tests. See <a href={SUI_SEC_BENCH.responsibleUse}>Responsible use</a>.</li>
         </ul>
       </section>
+
+      <AlsoInSeries current="/research/sui-sec-bench" />
 
       <section className="section-pad ssb-credits">
         <div>Sui Sec Bench by Quincy Labs. Thanks to OtterSec, Cetus, Mysten Labs, and the model teams.</div>

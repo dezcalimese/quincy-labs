@@ -84,3 +84,12 @@
 .hero .hero-bottom.hero-bottom-news{justify-content:space-between;flex-wrap:wrap;gap:12px 24px}
 .news-line{display:inline-flex;align-items:center;gap:10px}
 .news-tag{font:.6875rem var(--mono);letter-spacing:.07em;text-transform:uppercase;color:hsl(185 80% 32%);border:1px solid currentColor;padding:2px 8px;border-radius:999px}
+/* Sec Bench series list on the home page and the Research index. */
+.sec-bench-list{display:flex!important;flex-direction:column;gap:0!important;list-style:none;padding:0;margin:18px 0 0;font:inherit!important}
+.sec-bench-list li:before{content:none!important}
+.sec-bench-list a{display:flex;flex-direction:column;gap:4px;border-top:1px solid var(--line);padding:14px 0}
+.sec-bench-list strong{font-weight:500;font-size:1rem}
+.sec-bench-list span{font-size:.9375rem;line-height:1.5;color:hsl(20 10% 40%)}
+.sec-bench-list a:hover strong{color:hsl(185 80% 32%)}
+.research-row.sec-bench-row:hover{padding-left:0;background:none}
+.research-row.sec-bench-row p{max-width:none}
